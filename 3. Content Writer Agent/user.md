@@ -1,0 +1,1 @@
+{{ $("Main Body Prompt Writer (mkdn)").item.json.output }}
