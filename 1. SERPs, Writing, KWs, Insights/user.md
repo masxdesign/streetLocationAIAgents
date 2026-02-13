@@ -6,6 +6,9 @@ Location:
 - suburb = {{ $json.street.suburb }}
 - postcode = {{ $json.street.postcode }}
 - city = London
+- borough = {{ $json.street.borough }}
+- neighbourhood = {{ $json.street.neighbourhood || "not provided" }}
+- reference_point = {{ $json.street.reference_point }} (lat/lon)
 
 And the Tavily SERP Results tool to perform research for the primary keyword:
 {{ $json.street.seed.keyword }}
@@ -17,6 +20,13 @@ The description provides additional editorial direction (e.g. "focus more on tou
 
 Target audience:
 People looking to rent, buy, invest in, or evaluate commercial retail property.
+
+CRITICAL LOCATION RULES:
+- The report is about {{ $json.street.street }} ONLY – this is the primary location.
+- Do NOT merge {{ $json.street.street }} with any nearby places or developments in titles or headings.
+- If nearby places/developments are found, list them in a separate "Nearby notable places" section.
+- Area classification: Use the provided borough ({{ $json.street.borough }}) and neighbourhood ({{ $json.street.neighbourhood || "not provided" }}) exactly as given.
+- The source data has been corrected and is now accurate. Trust it and use it verbatim.
 
 Format your response strictly as a valid JSON object.
 IMPORTANT:
@@ -47,7 +57,7 @@ postcode = {{ $json.street.postcode }}
 city = London
 
 Example:
-{"q":"commercial retail real estate {{ $json.street.street }} {{ $json.street.suburb }} {{ $json.street.postcode }} London demographics footfall retail"}
+{"q":"commercial retail real estate {{ $json.street.street }} {{ $json.street.suburb }} {{ $json.street.postcode }} London demographics footfall retail transport stations landmarks"}
 
 STEP 2 — FINAL OUTPUT:
 After Tavily results are available, return your analysis as a strictly valid JSON object with this structure and no extra text:
@@ -61,8 +71,8 @@ After Tavily results are available, return your analysis as a strictly valid JSO
   "goal_of_article": "<main strategic objective for this location page>",
   "semantic_analysis": {
     "common_subtopics": [
-      "Demographics",
-      "Footfall and customer profile",
+      "Demographics and visitor profile",
+      "Footfall patterns and demand drivers",
       "Transport and accessibility",
       "Retail mix and tenant types",
       "Development and regeneration activity"
@@ -71,7 +81,8 @@ After Tavily results are available, return your analysis as a strictly valid JSO
       "Is this area good for retail business?",
       "What type of shops perform well here?",
       "Who are the typical customers in this area?",
-      "Is the area growing or attracting investment?"
+      "Is the area growing or attracting investment?",
+      "What are the nearest transport links?"
     ]
   },
   "keywords": {
@@ -93,7 +104,8 @@ After Tavily results are available, return your analysis as a strictly valid JSO
     "long_tail_keywords": [
       "is this a good area for opening a shop?",
       "best streets for retail in this area",
-      "commercial retail investment opportunities here"
+      "commercial retail investment opportunities here",
+      "nearest tube stations to [street]"
     ]
   }
 }
@@ -102,4 +114,7 @@ Critical rules for STEP 2:
 - Do NOT invent statistics, rents, yields, or footfall numbers.
 - Do NOT fabricate named businesses unless widely known.
 - Hidden insights must be strategic, not stylistic.
+- Use the provided borough and neighbourhood exactly as given in the location data.
+- Transport stations and key local anchors are pre-fetched separately - do NOT include them in your JSON output.
+- Focus your semantic analysis on: demographics, retail character, development activity, market dynamics.
 - The output must be pure JSON with no extra text.

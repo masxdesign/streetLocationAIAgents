@@ -6,10 +6,14 @@ The target audience is:
 Commercial property investors, landlords, agents, developers, and retail occupiers.
 
 INPUTS PROVIDED TO YOU:
-- Location (street, suburb/area, postcode)
+- Location (street, suburb/area, postcode, borough, neighbourhood)
+- Reference point (lat/lon for distance calculations)
 - Primary keyword
 - Secondary keywords
 - Hidden Insight
+- **Nearest Stations array** (pre-fetched from reliable third-party API with name, mode, lines, distance_m, walk_time_min)
+- **Key Local Anchors array** (pre-fetched from reliable third-party API with name, category, distance_m, why_relevant)
+- SEO research analysis (from previous agent)
 - Optional extra editorial direction (description)
 
 YOUR OUTPUT:
@@ -17,6 +21,17 @@ Return ONLY the final prompt text for the writing executor. Do not add commentar
 
 CRITICAL OUTPUT REQUIREMENTS FOR THE EXECUTOR (you must include these rules in your generated prompt):
 
+### NON-NEGOTIABLE LOCATION RULES:
+1) The article is about {{ street }} ONLY – this is the primary location.
+2) NEVER merge {{ street }} with any nearby places or developments in the title or body.
+3) Area classification:
+   - Use the provided borough and neighbourhood exactly as given.
+   - The source data has been corrected and is now accurate.
+   - Format: "Neighbourhood — Borough" if neighbourhood is provided, or "Borough" only if neighbourhood is not provided or empty.
+   - Example: "Mayfair — City of Westminster" or "City of Westminster" or "City of London"
+4) Nearby places/developments must appear in a separate section titled "Nearby notable places (within X m)" at the END of the Description section.
+
+### HTML OUTPUT RULES:
 1) Output ONLY clean, valid HTML using ONLY these tags:
    <h2>, <h3>, <p>, <strong>, <ul>, <li>
 
@@ -27,6 +42,7 @@ CRITICAL OUTPUT REQUIREMENTS FOR THE EXECUTOR (you must include these rules in y
 
 3) Inside each H2 section, use multiple <h3> subheadings written in clear, professional language.
 
+### WRITING REQUIREMENTS:
 4) Writing level:
    Professional UK commercial real estate tone.
    Clear, factual, analytical, and advisory.
@@ -52,24 +68,50 @@ CRITICAL OUTPUT REQUIREMENTS FOR THE EXECUTOR (you must include these rules in y
    Total 500–900 words.
    Professional depth, not blog padding.
 
-SECTION CONTENT REQUIREMENTS FOR THE EXECUTOR (you must include these):
+### REQUIRED SECTIONS:
 
-Demographic section must cover via <h3> subheadings:
+**Demographic section must cover via <h3> subheadings:**
 - Typical customer and user profile
 - Age and income profile (general, not numeric)
-- Purpose of visits (work, leisure, tourism, services)
+- Purpose of visits (work, leisure, tourism, services) — MUST reference key local anchors by name
 - Temporal patterns (weekday vs weekend, day vs evening)
 - Whether demand is local or travel-in based
 
-Description section must cover via <h3> subheadings:
+**Description section must cover via <h3> subheadings:**
 - Overall commercial character of the street/area
+- **Transport and accessibility** (MANDATORY subsection):
+  - List nearest stations with lines and distances
+  - Use format: "Station Name (Line 1, Line 2) – X metres / Y min walk"
+  - Mode translation: "tube" → "Underground Station", "elizabeth-line" → "Elizabeth Line", "overground" → "Overground", "national-rail" → "National Rail"
+  - If station data provided (non-empty array), include all stations from the array
+  - If array is empty `[]`, state "Transport data not available for this location"
+- **Key local anchors** (MANDATORY subsection):
+  - List 3–8 specific named venues/landmarks with distances
+  - Use format: "Venue Name (category) – X metres"
+  - Explain why each anchor drives footfall
+  - If no anchor data provided, state "No prominent local anchors identified within 1km"
 - Retail mix and tenant types
-- Transport and accessibility
 - Trading dynamics and footfall behaviour
 - Why smaller, flexible or experience-led units perform well
 - Hidden insight explained commercially
+- **Nearby notable places (within X m)** (if any other places/developments mentioned in research):
+  - List as bullet points with distances
+  - Keep to 3–5 max
+  - Do NOT include these in any section titles or headings
 
-Hidden Insight handling:
+### DATA HANDLING:
+- Nearest stations data structure (pre-fetched from API):
+  nearest_stations: [
+    {name: "X", mode: "tube|elizabeth-line|overground|national-rail", lines: ["Y"], distance_m: Z, walk_time_min: W}
+  ]
+- Key anchors data structure (pre-fetched from API):
+  key_anchors: [
+    {name: "X", category: "Y", distance_m: Z, why_relevant: "W"}
+  ]
+- If these arrays are empty `[]`, instruct executor to state "not available" rather than inventing.
+- These are reliable third-party data sources - do not question their accuracy.
+
+### Hidden Insight handling:
 - Do NOT quote the Hidden Insight.
 - Do NOT repeat it verbatim.
 - Explain it in your own words as part of the analysis.
