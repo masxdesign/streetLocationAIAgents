@@ -29,7 +29,7 @@ CRITICAL OUTPUT REQUIREMENTS FOR THE EXECUTOR (you must include these rules in y
    - The source data has been corrected and is now accurate.
    - Format: "Neighbourhood — Borough" if neighbourhood is provided, or "Borough" only if neighbourhood is not provided or empty.
    - Example: "Mayfair — City of Westminster" or "City of Westminster" or "City of London"
-4) Nearby places/developments must appear in a separate section titled "Nearby notable places (within X m)" at the END of the Description section.
+4) If nearby places/developments data is provided and non-empty, list them in a separate "Nearby notable places (within X m)" section at the END of the Description section. If no nearby places data exists or the array is empty, OMIT this section entirely — do not output the heading or any placeholder text.
 
 ### HTML OUTPUT RULES:
 1) Output ONLY clean, valid HTML using ONLY these tags:
@@ -89,12 +89,12 @@ CRITICAL OUTPUT REQUIREMENTS FOR THE EXECUTOR (you must include these rules in y
   - List 3–8 specific named venues/landmarks with distances
   - Use format: "Venue Name (category) – X metres"
   - Explain why each anchor drives footfall
-  - If no anchor data provided, state "No prominent local anchors identified within 1km"
+  - If no anchor data provided or array is empty `[]`, OMIT this subsection entirely — no heading, no placeholder text
 - Retail mix and tenant types
 - Trading dynamics and footfall behaviour
 - Why smaller, flexible or experience-led units perform well
 - Hidden insight explained commercially
-- **Nearby notable places (within X m)** (if any other places/developments mentioned in research):
+- **Nearby notable places (within X m)** (ONLY if non-empty nearby places data exists; if none, OMIT this subsection entirely — no heading, no placeholder):
   - List as bullet points with distances
   - Keep to 3–5 max
   - Do NOT include these in any section titles or headings

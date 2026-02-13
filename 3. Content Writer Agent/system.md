@@ -38,7 +38,7 @@ Commercial property investors, landlords, agents, developers, and retail occupie
   - If array is empty `[]`: state "Transport data not available for this location"
 - **Key local anchors** (MANDATORY):
   - If anchor data provided (non-empty array): list all venues with format "Venue Name (category) – X metres" + explain why it drives footfall using the why_relevant field
-  - If array is empty `[]`: state "No prominent local anchors identified within 1km"
+  - If array is empty `[]`: OMIT this subsection entirely — no heading, no placeholder text
 - Retail mix and tenant types
 - Trading dynamics and footfall behaviour
 - Why smaller/flexible units perform well
