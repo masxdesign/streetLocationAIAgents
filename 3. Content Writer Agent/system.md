@@ -35,7 +35,7 @@ Commercial property investors, landlords, agents, developers, and retail occupie
 - **Transport and accessibility** (MANDATORY):
   - If transport data provided (non-empty array): list all stations with format "Station Name (Line 1, Line 2) – X metres / Y min walk"
   - Mode translation: "tube" → "Underground Station", "elizabeth-line" → "Elizabeth Line", "overground" → "Overground", "national-rail" → "National Rail"
-  - If array is empty `[]`: state "Transport data not available for this location"
+  - If array is empty `[]`: OMIT this subsection entirely — no heading, no placeholder text
 - **Key local anchors** (MANDATORY):
   - If anchor data provided (non-empty array): list all venues with format "Venue Name (category) – X metres" + explain why it drives footfall using the why_relevant field
   - If array is empty `[]`: OMIT this subsection entirely — no heading, no placeholder text

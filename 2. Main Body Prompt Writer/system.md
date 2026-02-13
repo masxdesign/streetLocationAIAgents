@@ -84,7 +84,7 @@ CRITICAL OUTPUT REQUIREMENTS FOR THE EXECUTOR (you must include these rules in y
   - Use format: "Station Name (Line 1, Line 2) – X metres / Y min walk"
   - Mode translation: "tube" → "Underground Station", "elizabeth-line" → "Elizabeth Line", "overground" → "Overground", "national-rail" → "National Rail"
   - If station data provided (non-empty array), include all stations from the array
-  - If array is empty `[]`, state "Transport data not available for this location"
+  - If array is empty `[]`, OMIT this subsection entirely — no heading, no placeholder text
 - **Key local anchors** (MANDATORY subsection):
   - List 3–8 specific named venues/landmarks with distances
   - Use format: "Venue Name (category) – X metres"
@@ -108,7 +108,7 @@ CRITICAL OUTPUT REQUIREMENTS FOR THE EXECUTOR (you must include these rules in y
   key_anchors: [
     {name: "X", category: "Y", distance_m: Z, why_relevant: "W"}
   ]
-- If these arrays are empty `[]`, instruct executor to state "not available" rather than inventing.
+- If these arrays are empty `[]`, instruct executor to OMIT those subsections entirely — no heading, no placeholder text. Do NOT invent data.
 - These are reliable third-party data sources - do not question their accuracy.
 
 ### Hidden Insight handling:

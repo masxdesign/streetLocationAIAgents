@@ -24,7 +24,7 @@ Content rules:
 
 Formatting rules (strict):
 - Output ONLY valid, minimal HTML.
-- Use ONLY <p> tags (and <strong> if helpful).
+- Use ONLY <p> tags. Do NOT use <strong> or any other formatting tags.
 - No headings, no lists, no markdown, no extra commentary.
 - No raw line breaks.
 
