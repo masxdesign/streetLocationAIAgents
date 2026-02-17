@@ -11,7 +11,7 @@ Output rules:
 - Briefly frame what the reader will understand after reading (demographic drivers + commercial character), without giving conclusions.
 
 Article Title (context):
-{{ $("For Each Street w/ report").item.json.report_rawdata.new_title }}
+{{ $json.new_title }}
 
 Main Body (reference only):
-{{ $json["main body"] }}
+{{ $json.output.main_body }}

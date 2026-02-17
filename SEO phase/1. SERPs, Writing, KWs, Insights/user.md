@@ -1,17 +1,17 @@
 Use the given:
-Title Template: 
-Description: {{ $json.tone[$json.street.seed.tone] }}
-Location: 
-- street = {{ $json.street.street }}
-- suburb = {{ $json.street.suburb }}
-- postcode = {{ $json.street.postcode }}
+Title Template: {{ $json.seed.title }}
+Description: {{ $json.seed.tone_description }}
+Location:
+- street = {{ $json.street }}
+- suburb = {{ $json.suburb || "not provided" }}
+- postcode = {{ $json.postcode }}
 - city = London
-- borough = {{ $json.street.borough }}
-- neighbourhood = {{ $json.street.neighbourhood || "not provided" }}
-- reference_point = {{ $json.street.reference_point }} (lat/lon)
+- borough = {{ $json.borough || "not provided" }}
+- neighbourhood = {{ $json.neighbourhood || "not provided" }}
+- reference_point = {{ $json.reference_point }} (lat/lon)
 
 And the Tavily SERP Results tool to perform research for the primary keyword:
-{{ $json.street.seed.keyword }}
+{{ $json.seed.keyword }}
 
 Context:
 This article is about commercial retail real estate for the given location.
@@ -22,10 +22,10 @@ Target audience:
 People looking to rent, buy, invest in, or evaluate commercial retail property.
 
 CRITICAL LOCATION RULES:
-- The report is about {{ $json.street.street }} ONLY – this is the primary location.
-- Do NOT merge {{ $json.street.street }} with any nearby places or developments in titles or headings.
+- The report is about {{ $json.street }} ONLY – this is the primary location.
+- Do NOT merge {{ $json.street }} with any nearby places or developments in titles or headings.
 - If nearby places/developments are found, list them in a separate "Nearby notable places" section.
-- Area classification: Use the provided borough ({{ $json.street.borough }}) and neighbourhood ({{ $json.street.neighbourhood || "not provided" }}) exactly as given.
+- Area classification: Use the provided borough ({{ $json.borough || "not provided" }}) and neighbourhood ({{ $json.neighbourhood || "not provided" }}) exactly as given.
 - The source data has been corrected and is now accurate. Trust it and use it verbatim.
 
 Format your response strictly as a valid JSON object.
@@ -50,14 +50,14 @@ Tavily tool arguments schema:
 {"q":"<string>"}
 
 Build q from:
-keyword = {{ $json.street.seed.keyword }}
-street = {{ $json.street.street }}
-suburb = {{ $json.street.suburb }}
-postcode = {{ $json.street.postcode }}
+keyword = {{ $json.seed.keyword }}
+street = {{ $json.street }}
+suburb = {{ $json.suburb || "not provided" }}
+postcode = {{ $json.postcode }}
 city = London
 
 Example:
-{"q":"commercial retail real estate {{ $json.street.street }} {{ $json.street.suburb }} {{ $json.street.postcode }} London demographics footfall retail transport stations landmarks"}
+{"q":"commercial retail real estate {{ $json.street }} {{ $json.suburb || "not provided" }} {{ $json.postcode }} London demographics footfall retail transport stations landmarks"}
 
 STEP 2 — FINAL OUTPUT:
 After Tavily results are available, return your analysis as a strictly valid JSON object with this structure and no extra text:
