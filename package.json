@@ -1,0 +1,13 @@
+{
+  "name": "street-blog-gen",
+  "version": "1.0.0",
+  "private": true,
+  "description": "N8N Street Blog Gen prompt management",
+  "scripts": {
+    "deploy-prompt": "node scripts/deploy-prompt.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "mssql": "^11.0.1"
+  }
+}
