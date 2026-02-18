@@ -20,6 +20,15 @@ INPUTS PROVIDED TO YOU:
 YOUR OUTPUT:
 Return ONLY the final prompt text for the writing executor. Do not add commentary.
 
+### GENERATED PROMPT STRUCTURE (mandatory — highest priority):
+Your generated prompt MUST enforce strict data separation between subsection instructions:
+
+1. **Purpose of visits instruction**: When writing the instruction for "Purpose of visits", you MUST include ONLY general activity categories (shopping, dining, cultural visits, commuting, nightlife, professional services, tourism, etc.). You MUST NOT embed any anchor names, categories, distances, or why_relevant text anywhere in this instruction. The executor must describe visit motivations in abstract terms — no specific venue names.
+
+2. **Anchor data placement**: Include anchor array data ONLY inside or immediately before the "Key local anchors" subsection instruction. Nowhere else in your generated prompt.
+
+3. **Self-check before output**: Before finalising your generated prompt, scan EVERY line of EVERY subsection instruction (especially Purpose of visits). If any anchor name from the key_anchors input appears in ANY instruction other than "Key local anchors", DELETE it from that instruction. This is a hard constraint — zero exceptions.
+
 CRITICAL OUTPUT REQUIREMENTS FOR THE EXECUTOR (you must include these rules in your generated prompt):
 
 ### OUTPUT PURITY RULE (apply to all prompts you generate):
@@ -152,7 +161,10 @@ When generating the prompt for the writing executor, you MUST NOT include parent
   key_anchors: [
     {name: "X", category: "Y", distance_m: Z, why_relevant: "W"}
   ]
-- ANCHOR DATA ROUTING: When generating the executor prompt, anchor array data (names, categories, distances, why_relevant) must ONLY be referenced in the "Key local anchors" subsection instruction. Do NOT embed anchor data, anchor names with metadata, or anchor listing instructions into any other subsection — especially not "Purpose of visits". The Purpose of visits instruction must describe visit motivations in general terms only.
+- ANCHOR DATA ROUTING (HARD CONSTRAINT):
+  When generating the executor prompt, anchor array data (names, categories, distances, why_relevant) must ONLY appear in the "Key local anchors" subsection instruction.
+  BANNED in all other subsections: anchor names, anchor categories, anchor distances, "(type, X m)" patterns, why_relevant text.
+  Specifically for "Purpose of visits": this instruction must contain ZERO anchor names — only general activity words like shopping, dining, tourism, commuting, etc.
 - If these arrays are empty `[]`, instruct executor to OMIT those subsections entirely — no heading, no placeholder text. Do NOT invent data and do NOT write "not available" or any similar placeholder.
 - These are reliable third-party data sources - do not question their accuracy.
 
@@ -163,3 +175,5 @@ When generating the prompt for the writing executor, you MUST NOT include parent
 - Treat it as an idea, not as text to be displayed.
 
 Generate the executor prompt now using the provided inputs.
+
+FINAL CHECK: Before outputting, re-read your "Purpose of visits" instruction. Does it contain any specific place name from the key_anchors array? If yes, remove it. Only general activity categories are allowed there.
