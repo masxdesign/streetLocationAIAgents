@@ -23,11 +23,9 @@ Return ONLY the final prompt text for the writing executor. Do not add commentar
 ### GENERATED PROMPT STRUCTURE (mandatory — highest priority):
 Your generated prompt MUST enforce strict data separation between subsection instructions:
 
-1. **Purpose of visits instruction**: When writing the instruction for "Purpose of visits", you MUST include ONLY general activity categories (shopping, dining, cultural visits, commuting, nightlife, professional services, tourism, etc.). You MUST NOT embed any anchor names, categories, distances, or why_relevant text anywhere in this instruction. The executor must describe visit motivations in abstract terms — no specific venue names.
+1. **Anchor data placement**: Include anchor array data ONLY inside or immediately before the "Key local anchors" subsection instruction. Nowhere else in your generated prompt — not in "Typical customer and user profile", not in "Temporal patterns", not in any Demographic subsection.
 
-2. **Anchor data placement**: Include anchor array data ONLY inside or immediately before the "Key local anchors" subsection instruction. Nowhere else in your generated prompt.
-
-3. **Self-check before output**: Before finalising your generated prompt, scan EVERY line of EVERY subsection instruction (especially Purpose of visits). If any anchor name from the key_anchors input appears in ANY instruction other than "Key local anchors", DELETE it from that instruction. This is a hard constraint — zero exceptions.
+2. **Self-check before output**: Before finalising your generated prompt, scan EVERY subsection instruction. If any anchor name from the key_anchors input appears in ANY instruction other than "Key local anchors", DELETE it. Zero exceptions.
 
 CRITICAL OUTPUT REQUIREMENTS FOR THE EXECUTOR (you must include these rules in your generated prompt):
 
@@ -58,7 +56,7 @@ When generating the prompt for the writing executor, you MUST NOT include parent
    <h2>Description</h2>
    No other H2s, no introduction, no conclusion.
 
-3) Every <h3> must be a short, clean label (2–6 words). NEVER append lists of names, data, or anchor names to a heading. For example, write `<h3>Purpose of visits</h3>` — NOT `<h3>Purpose of visits — Name1, Name2, Name3</h3>`. All detail belongs in the `<p>` body text below the heading.
+3) Every <h3> must be a short, clean label (2–6 words). NEVER append lists of names, data, or anchor names to a heading. All detail belongs in the `<p>` body text below the heading.
 
 3) Inside each H2 section, use multiple <h3> subheadings written in clear, professional language.
 
@@ -109,9 +107,8 @@ When generating the prompt for the writing executor, you MUST NOT include parent
 ### REQUIRED SECTIONS:
 
 **Demographic section must cover via <h3> subheadings:**
-- Typical customer and user profile
+- Typical customer and user profile — instruct executor to describe who visits this street and what general activities bring them here (e.g. shopping, dining, commuting, tourism, professional services, nightlife). Write in narrative prose. Do NOT name individual venues, landmarks, or anchors — save all named places for the "Key local anchors" subsection under Description.
 - Age and income profile — instruct executor to describe in general qualitative terms; do not use numeric figures
-- Purpose of visits — instruct executor to describe the general REASONS and ACTIVITIES that bring people to this street: shopping, dining, cultural visits, commuting, nightlife, professional services, tourism, etc. Write 2–4 sentences of plain narrative prose. Do NOT name individual venues, landmarks, or anchors in this subsection — save all named places for the "Key local anchors" subsection under Description.
 - Temporal patterns — instruct executor to address weekday vs weekend and daytime vs evening dynamics
 - Whether demand is local or travel-in based
 - What this demographic means for businesses here — instruct executor to briefly note what the visitor/customer profile means for the types of businesses that tend to do well on this street, and mention rental demand only if it flows naturally
@@ -164,7 +161,6 @@ When generating the prompt for the writing executor, you MUST NOT include parent
 - ANCHOR DATA ROUTING (HARD CONSTRAINT):
   When generating the executor prompt, anchor array data (names, categories, distances, why_relevant) must ONLY appear in the "Key local anchors" subsection instruction.
   BANNED in all other subsections: anchor names, anchor categories, anchor distances, "(type, X m)" patterns, why_relevant text.
-  Specifically for "Purpose of visits": this instruction must contain ZERO anchor names — only general activity words like shopping, dining, tourism, commuting, etc.
 - If these arrays are empty `[]`, instruct executor to OMIT those subsections entirely — no heading, no placeholder text. Do NOT invent data and do NOT write "not available" or any similar placeholder.
 - These are reliable third-party data sources - do not question their accuracy.
 
@@ -176,4 +172,4 @@ When generating the prompt for the writing executor, you MUST NOT include parent
 
 Generate the executor prompt now using the provided inputs.
 
-FINAL CHECK: Before outputting, re-read your "Purpose of visits" instruction. Does it contain any specific place name from the key_anchors array? If yes, remove it. Only general activity categories are allowed there.
+FINAL CHECK: Before outputting, scan every Demographic subsection instruction. If any anchor name from the key_anchors input appears anywhere outside the "Key local anchors" instruction, DELETE it.

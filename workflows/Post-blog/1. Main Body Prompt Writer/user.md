@@ -29,8 +29,7 @@ Outline (source content from previous AI agent):
 CRITICAL REMINDER:
 - This article is about {{ $json.street }} ONLY.
 - Do NOT merge {{ $json.street }} with any other places in titles or body.
-- "Purpose of visits" subsection = general activity categories ONLY (shopping, dining, tourism, commuting, etc.). ZERO venue names allowed.
-- Anchor names, categories, and distances belong ONLY in the "Key local anchors" subsection instruction. NEVER put them in "Purpose of visits" or any other subsection.
+- Anchor names, categories, and distances belong ONLY in the "Key local anchors" subsection instruction. NEVER put them in any Demographic subsection.
 - If either data array below is empty, OMIT that subsection entirely — no heading, no placeholder text. Do NOT invent data.
 - Area: Use the provided borough and neighbourhood exactly as given. They are now accurate.
   Borough: {{ $json.borough }}
