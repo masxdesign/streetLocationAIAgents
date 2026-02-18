@@ -29,7 +29,7 @@ Outline (source content from previous AI agent):
 CRITICAL REMINDER:
 - This article is about {{ $json.street }} ONLY.
 - Do NOT merge {{ $json.street }} with any other places in titles or body.
-- Anchor names, categories, and distances belong ONLY in the "Key local anchors" subsection instruction. NEVER put them in any Demographic subsection.
+- Structured anchor data (categories, distances, bold formatting) belongs ONLY in the "Key local anchors" subsection instruction. In other subsections like "Purpose of visits", anchor names may appear as plain-text references in flowing prose — but NEVER with (category, X m) formatting.
 - If either data array below is empty, OMIT that subsection entirely — no heading, no placeholder text. Do NOT invent data.
 - Area: Use the provided borough and neighbourhood exactly as given. They are now accurate.
   Borough: {{ $json.borough }}
