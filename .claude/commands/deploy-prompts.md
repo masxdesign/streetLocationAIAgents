@@ -33,9 +33,11 @@ For each candidate file, extract the database fields from its path:
   - `Pre-blog` → `pre-blog`
   - `Post-blog` → `post-blog`
   - `My New Workflow` → `my-new-workflow`
-- **agent**: the agent folder name with the leading number prefix (`#. `) stripped — everything after the first `. ` (dot + space):
-  - `2. Main Body Prompt Writer` → `Main Body Prompt Writer`
-  - `1. SERPs, Writing, KWs, Insights` → `SERPs, Writing, KWs, Insights`
+- **agent**: the agent folder name with the leading number prefix (`#. `) stripped, then converted to **kebab-case** (lowercase, spaces and commas replaced by hyphens, consecutive hyphens collapsed):
+  - `2. Main Body Prompt Writer` → `main-body-prompt-writer`
+  - `1. SERPs, Writing, KWs, Insights` → `serps-writing-kws-insights`
+  - `3. AI Agent Introduction writer` → `ai-agent-introduction-writer`
+  - `4. Market Implications Writer` → `market-implications-writer`
 - **prompt_type**: the filename without extension: `system` or `user`
 
 ### Step 4 — Deploy each changed file
