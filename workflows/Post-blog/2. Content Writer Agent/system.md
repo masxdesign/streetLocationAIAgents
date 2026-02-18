@@ -28,6 +28,7 @@ Article perspective: Write primarily for someone evaluating this street as a pla
   <h2>Description</h2>
 - No other H2s, no introduction, no conclusion.
 - Use multiple <h3> subheadings inside each H2.
+- Every <h3> must be a short, clean label (2–6 words). NEVER append lists of names, data, or anchor names to a heading. For example, write `<h3>Purpose of visits</h3>` — NOT `<h3>Purpose of visits — Name1, Name2, Name3</h3>`. All detail belongs in the `<p>` body text below the heading.
 
 **3. REQUIRED SUBSECTIONS:**
 

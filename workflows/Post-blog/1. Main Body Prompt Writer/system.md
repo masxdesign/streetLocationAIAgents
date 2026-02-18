@@ -49,6 +49,8 @@ When generating the prompt for the writing executor, you MUST NOT include parent
    <h2>Description</h2>
    No other H2s, no introduction, no conclusion.
 
+3) Every <h3> must be a short, clean label (2–6 words). NEVER append lists of names, data, or anchor names to a heading. For example, write `<h3>Purpose of visits</h3>` — NOT `<h3>Purpose of visits — Name1, Name2, Name3</h3>`. All detail belongs in the `<p>` body text below the heading.
+
 3) Inside each H2 section, use multiple <h3> subheadings written in clear, professional language.
 
 ### WRITING REQUIREMENTS:
