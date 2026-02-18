@@ -18,9 +18,14 @@ function getArg(name) {
 }
 
 const workflow   = getArg('workflow');
-const agent      = getArg('agent');
+const agentRaw   = getArg('agent');
 const promptType = getArg('type');
 const filePath   = getArg('file');
+
+// Convert agent name to kebab-case for DB storage
+const agent = agentRaw
+  ? agentRaw.toLowerCase().replace(/[\s,]+/g, '-').replace(/-{2,}/g, '-')
+  : null;
 
 if (!workflow || !agent || !promptType || !filePath) {
   console.error('Usage: node deploy-prompt.js --workflow <wf> --agent <agent> --type <system|user> --file <path>');
