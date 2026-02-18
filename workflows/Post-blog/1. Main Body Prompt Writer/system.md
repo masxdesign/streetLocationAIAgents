@@ -104,8 +104,8 @@ When generating the prompt for the writing executor, you MUST NOT include parent
 - Age and income profile — instruct executor to describe in general qualitative terms; do not use numeric figures
 - Purpose of visits — instruct executor to write as narrative prose about WHY people visit this street. Place names may appear within flowing sentences, but NEVER formatted as an anchor list. NO `<strong>` tags, NO distances, NO categories, NO "(type, X m)" patterns anywhere in this subsection.
   Instruct executor with this contrast:
-  CORRECT: "Many visitors arrive for cultural reasons, with the Royal Academy and the Cartoon Museum drawing steady daytime traffic. Others come for shopping along nearby Carnaby Street or dining in the surrounding restaurants and cafés."
-  WRONG: "**Royal Academy** (museum, 524 m) – a cultural anchor that brings daytime museum-goers..."
+  CORRECT: "Many visitors arrive for cultural reasons, with [name] and [name] drawing steady daytime traffic. Others come for shopping or dining in the surrounding restaurants and cafés."
+  WRONG: "**[Name]** (museum, 524 m) – a cultural anchor that brings daytime museum-goers..."
   The WRONG format belongs ONLY in the Key local anchors subsection under Description.
 - Temporal patterns — instruct executor to address weekday vs weekend and daytime vs evening dynamics
 - Whether demand is local or travel-in based

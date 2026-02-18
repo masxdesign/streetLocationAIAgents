@@ -36,8 +36,8 @@ Article perspective: Write primarily for someone evaluating this street as a pla
 - Typical customer and user profile
 - Age and income profile — describe in general qualitative terms; do not use numeric figures
 - Purpose of visits — write as narrative prose about WHY people visit this street. You may name specific places within flowing sentences, but NEVER format them as a list of anchors. NO `<strong>` tags, NO distances, NO categories, NO "(type, X m)" patterns anywhere in this subsection.
-  CORRECT example: "Many visitors arrive for cultural reasons, with the Royal Academy and the Cartoon Museum drawing steady daytime traffic. Others come for shopping along nearby Carnaby Street or dining in the surrounding restaurants and cafés."
-  WRONG example: "**Royal Academy** (museum, 524 m) – a cultural anchor that brings daytime museum-goers..."
+  CORRECT: "Many visitors arrive for cultural reasons, with [name] and [name] drawing steady daytime traffic. Others come for shopping or dining in the surrounding restaurants and cafés."
+  WRONG: "**[Name]** (museum, 524 m) – a cultural anchor that brings daytime museum-goers..."
   The WRONG format belongs ONLY in the Key local anchors subsection under Description.
 - Temporal patterns — cover weekday vs weekend and daytime vs evening where relevant
 - Local vs travel-in demand
