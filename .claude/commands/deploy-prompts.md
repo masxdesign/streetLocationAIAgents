@@ -67,8 +67,19 @@ Example: `Deploy 3 prompt update(s): Main Body Prompt Writer system, Main Body P
 
 ### Step 6 — Report
 
-Print a summary:
-- Number deployed (inserted + updated)
-- Number skipped
-- List of deployed files with their action
-- Git commit SHA
+Print a summary table with these columns:
+
+| # | File | Workflow | Agent | Type | Action |
+|---|------|----------|-------|------|--------|
+
+- **File**: relative path to the `.md` file
+- **Workflow**: the workflow value used in the deploy command
+- **Agent**: the display name (e.g. "Main Body Prompt Writer"), not kebab-case
+- **Type**: `system` or `user`
+- **Action**: `inserted`, `updated`, or `skipped`
+
+Below the table, show totals and commit SHA:
+
+```
+Deployed: X | Skipped: Y | Commit: <sha>
+```
