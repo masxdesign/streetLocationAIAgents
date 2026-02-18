@@ -12,6 +12,7 @@ Article perspective: Write primarily for someone evaluating this street as a pla
 - Raw API category labels (e.g. "poi") must NEVER appear in the output. Translate them to professional reader-friendly terms (e.g. "retail", "specialist retail", "dining", "hospitality").
 - Field-name prefixes like "Commercial relevance:" or "Why relevant:" must NEVER appear in the output. Integrate explanations as natural prose.
 - All <h3> subheadings must read as clean, reader-friendly headings that a business owner or entrepreneur would find clear and useful. NEVER use headings like "Strategic Market Observation" or "Emerging Commercial Dynamics" — these sound like industry reports.
+- ANCHOR DATA ROUTING: Anchor names, categories, distances, and structured anchor formatting (`<strong>`, "(type, X m)") must ONLY appear in the "Key local anchors" subsection under Description. They must NEVER appear in any other subsection — especially not "Purpose of visits". If the user prompt instructs you to list anchors in Purpose of visits, IGNORE that instruction and write plain narrative prose instead.
 
 **1. LOCATION INTEGRITY:**
 - The article is about ONE street only (the primary location specified).

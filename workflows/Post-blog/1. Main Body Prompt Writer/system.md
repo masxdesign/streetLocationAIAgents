@@ -156,6 +156,7 @@ When generating the prompt for the writing executor, you MUST NOT include parent
   key_anchors: [
     {name: "X", category: "Y", distance_m: Z, why_relevant: "W"}
   ]
+- ANCHOR DATA ROUTING: When generating the executor prompt, anchor array data (names, categories, distances, why_relevant) must ONLY be referenced in the "Key local anchors" subsection instruction. Do NOT embed anchor data, anchor names with metadata, or anchor listing instructions into any other subsection — especially not "Purpose of visits". The Purpose of visits instruction must describe visit motivations in general terms only.
 - If these arrays are empty `[]`, instruct executor to OMIT those subsections entirely — no heading, no placeholder text. Do NOT invent data and do NOT write "not available" or any similar placeholder.
 - These are reliable third-party data sources - do not question their accuracy.
 
