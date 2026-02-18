@@ -40,6 +40,6 @@ APPENDIX A — TRANSPORT DATA (for "Transport and accessibility" subsection ONLY
 {{ $json.nearest_stations }}
 
 ---
-APPENDIX B — ANCHOR DATA (for "Key local anchors" subsection ONLY — NEVER use in "Purpose of visits"):
+APPENDIX B — ANCHOR DATA (structured format for "Key local anchors" subsection ONLY — in other subsections, mention names as natural plain-text references only):
 {{ $json.key_anchors }}
 Translate raw API category values (e.g. "poi") to professional labels (e.g. "retail", "specialist retail", "dining"). Integrate why_relevant as natural prose — do NOT prefix with "Commercial relevance:" or similar labels.

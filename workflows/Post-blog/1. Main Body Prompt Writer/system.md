@@ -23,9 +23,9 @@ Return ONLY the final prompt text for the writing executor. Do not add commentar
 ### GENERATED PROMPT STRUCTURE (mandatory — highest priority):
 Your generated prompt MUST enforce strict data separation between subsection instructions:
 
-1. **Anchor data placement**: Include anchor array data ONLY inside or immediately before the "Key local anchors" subsection instruction. Nowhere else in your generated prompt — not in "Typical customer and user profile", not in "Temporal patterns", not in any Demographic subsection.
+1. **Structured anchor data placement**: Include anchor array data with categories, distances, and formatting instructions ONLY inside or immediately before the "Key local anchors" subsection instruction. In "Purpose of visits", you may instruct the executor to mention anchor names as natural plain-text references — but NEVER with categories, distances, bold formatting, or list-style entries.
 
-2. **Self-check before output**: Before finalising your generated prompt, scan EVERY subsection instruction. If any anchor name from the key_anchors input appears in ANY instruction other than "Key local anchors", DELETE it. Zero exceptions.
+2. **Self-check before output**: Before finalising your generated prompt, scan every Demographic subsection instruction. If any structured anchor pattern — "(type, X m)", distance figures, category labels, or bold formatting — appears outside "Key local anchors", REMOVE it. Anchor names as plain-text mentions in flowing prose are fine.
 
 CRITICAL OUTPUT REQUIREMENTS FOR THE EXECUTOR (you must include these rules in your generated prompt):
 
@@ -107,8 +107,9 @@ When generating the prompt for the writing executor, you MUST NOT include parent
 ### REQUIRED SECTIONS:
 
 **Demographic section must cover via <h3> subheadings:**
-- Typical customer and user profile — instruct executor to describe who visits this street and what general activities bring them here (e.g. shopping, dining, commuting, tourism, professional services, nightlife). Write in narrative prose. Do NOT name individual venues, landmarks, or anchors — save all named places for the "Key local anchors" subsection under Description.
+- Typical customer and user profile — instruct executor to describe who visits this street and what general activities bring them here (e.g. shopping, dining, commuting, tourism, professional services, nightlife). Write in narrative prose.
 - Age and income profile — instruct executor to describe in general qualitative terms; do not use numeric figures
+- Purpose of visits — instruct executor to describe why people visit this street in 2–4 sentences of flowing narrative prose. Anchor names may be mentioned as natural references within sentences to give context (e.g. "visitors to nearby galleries often combine cultural trips with shopping on this street"). However, the executor MUST NOT use structured anchor formatting: no categories in parentheses, no distances in metres, no bold-formatted names, no list-style entries like "Name (type, X m) –". Simply weave place names naturally into the paragraph.
 - Temporal patterns — instruct executor to address weekday vs weekend and daytime vs evening dynamics
 - Whether demand is local or travel-in based
 - What this demographic means for businesses here — instruct executor to briefly note what the visitor/customer profile means for the types of businesses that tend to do well on this street, and mention rental demand only if it flows naturally
@@ -159,8 +160,8 @@ When generating the prompt for the writing executor, you MUST NOT include parent
     {name: "X", category: "Y", distance_m: Z, why_relevant: "W"}
   ]
 - ANCHOR DATA ROUTING (HARD CONSTRAINT):
-  When generating the executor prompt, anchor array data (names, categories, distances, why_relevant) must ONLY appear in the "Key local anchors" subsection instruction.
-  BANNED in all other subsections: anchor names, anchor categories, anchor distances, "(type, X m)" patterns, why_relevant text.
+  Structured anchor data (categories, distances, why_relevant, "(type, X m)" patterns) must ONLY appear in the "Key local anchors" subsection instruction.
+  In other subsections (including "Purpose of visits"), anchor names may be referenced as plain text within narrative prose, but NEVER with structured formatting (no categories, no distances, no bold, no list entries).
 - If these arrays are empty `[]`, instruct executor to OMIT those subsections entirely — no heading, no placeholder text. Do NOT invent data and do NOT write "not available" or any similar placeholder.
 - These are reliable third-party data sources - do not question their accuracy.
 
@@ -172,4 +173,4 @@ When generating the prompt for the writing executor, you MUST NOT include parent
 
 Generate the executor prompt now using the provided inputs.
 
-FINAL CHECK: Before outputting, scan every Demographic subsection instruction. If any anchor name from the key_anchors input appears anywhere outside the "Key local anchors" instruction, DELETE it.
+FINAL CHECK: Before outputting, scan every Demographic subsection instruction. If any structured anchor pattern — "(type, X m)", distance figures, category labels, or bold formatting — appears outside the "Key local anchors" instruction, REMOVE it. Plain-text name mentions in flowing prose are allowed.
