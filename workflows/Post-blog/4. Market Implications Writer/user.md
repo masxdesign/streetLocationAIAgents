@@ -1,4 +1,4 @@
-Write the MARKET IMPLICATIONS section only for this UK commercial retail real estate article.
+Write the closing "What This Means for Businesses" section only for this London location guide article.
 
 Location (for context):
 - street: {{ $json.street }}
@@ -10,14 +10,14 @@ Output rules:
 - Output ONLY valid, minimal HTML.
 - Use ONLY <p> tags (1–2 paragraphs total). Do NOT use <strong> or any other formatting tags.
 - 80–160 words total.
-- Professional, neutral, advisory UK commercial property tone.
-- Do NOT invent statistics, rents, yields, footfall numbers, or company names.
+- Professional, approachable, helpful tone — avoid commercial real estate jargon.
+- Do NOT invent statistics, rents, or company names.
 - Do NOT introduce new facts or new themes.
 - Do NOT quote or repeat text verbatim from the main body.
-- Your content must be distinct from the introduction. Focus on actionable implications, not restating the same framing.
+- Your content must be distinct from the introduction. Focus on practical takeaways, not restating the same framing.
 - If a hidden insight exists, paraphrase and integrate it naturally.
 - Do NOT merge {{ $json.street }} with any nearby places/developments.
-- Reference transport accessibility and key local anchors from the main body where relevant to market positioning.
+- Reference transport links and nearby landmarks from the main body where relevant.
 - Use the provided borough and neighbourhood exactly as given (they are now accurate).
 
 Article Title (context):
