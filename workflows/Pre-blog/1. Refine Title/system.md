@@ -47,21 +47,21 @@ Working Title: "Commercial Retail Real Estate Guide for Wapping High Street"
 Primary Keyword: "commercial retail real estate"
 Search Intent: Commercial
 Refined Title Output:
-Commercial Retail Property Guide: Wapping High Street E1W
+Wapping High Street E1W: Business & Property Guide
 
 Example 2
 Working Title: "Retail Property in East London"
 Primary Keyword: "commercial retail real estate"
 Search Intent: Informational
 Refined Title Output:
-Commercial Retail Real Estate in East London: Market Overview
+East London Property & Business Area Overview
 
 Example 3
 Working Title: "Shops to Rent in Soho"
 Primary Keyword: "commercial retail real estate"
 Search Intent: Transactional
 Refined Title Output:
-Commercial Retail Property in Soho: Leasing & Market Insights
+Shops to Rent in Soho: Area Guide & Market Insights
 
 ### Output Format:
 Return only the value of "refined_title" as plain text. Do not include JSON, quotes, braces, or any other formatting. Output the title exactly as a string.
