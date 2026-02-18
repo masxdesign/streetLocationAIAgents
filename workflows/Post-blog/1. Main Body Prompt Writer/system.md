@@ -108,16 +108,21 @@ When generating the prompt for the writing executor, you MUST NOT include parent
 - Overall commercial character of the street/area
 - Transport and accessibility
   Instruct executor: this subsection is required if station data is provided (non-empty array).
-  List all stations using format: "Station Name (Line 1, Line 2) – X metres / Y min walk"
-  Mode translation: "tube" → "Underground Station", "elizabeth-line" → "Elizabeth Line", "overground" → "Overground", "national-rail" → "National Rail"
+  Format as a `<ul>` list. For each station, output one `<li>` using this exact pattern:
+  `<li><strong>Station Name Mode Label</strong> (Line 1, Line 2) – X m / Y min walk</li>`
+  Append the mode label directly after the station name (no parentheses around the mode):
+  "tube" → "Underground Station", "elizabeth-line" → "Elizabeth Line", "overground" → "Overground", "national-rail" → "National Rail"
+  Example: `<li><strong>Oxford Circus Underground Station</strong> (Bakerloo, Central, Victoria) – 67 m / 1 min walk</li>`
+  Do NOT wrap lines in outer parentheses. Do NOT put the mode label in a separate parenthetical.
   If station data is provided (non-empty array), include all stations from the array.
   If array is empty `[]`, instruct executor to OMIT this subsection entirely — no heading, no placeholder text.
 - Key local anchors
   Instruct executor: this subsection is required if anchor data is provided (non-empty array).
-  List 3–8 specific named venues/landmarks with distances.
+  List 3–8 specific named venues/landmarks. Format each anchor as its own `<p>` block with the name in `<strong>`, using this pattern:
+  `<p><strong>Anchor Name</strong> (reader-friendly category, X m) – natural prose explaining why this anchor draws visitors and generates foot traffic for the area.</p>`
   Instruct executor to translate raw API category values to reader-friendly labels (e.g. "poi" → use a specific term like "shop", "restaurant", "dining", or "hotel" based on context; "museum" → "museum"; "landmark" → "landmark"). Raw API categories must never appear in the output.
-  Instruct executor to integrate the why_relevant explanation as natural prose within each anchor description. Do NOT use field-name prefixes like "Commercial relevance:" or "Why relevant:".
-  Explain why each anchor drives foot traffic to the area.
+  Instruct executor to weave the why_relevant explanation into the prose naturally. Do NOT use field-name prefixes like "Commercial relevance:" or "Why relevant:".
+  Each anchor must be a separate `<p>` — do NOT combine all anchors into one paragraph.
   If no anchor data provided or array is empty `[]`, instruct executor to OMIT this subsection entirely — no heading, no placeholder text.
 - Mix of businesses and types of shops/services
 - Trading patterns and foot traffic

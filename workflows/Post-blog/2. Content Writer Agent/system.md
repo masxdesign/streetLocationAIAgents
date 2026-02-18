@@ -43,12 +43,20 @@ Article perspective: Write primarily for someone evaluating this street as a pla
 - Overall commercial character
 - Transport and accessibility
   You MUST include this subsection if transport data is provided (non-empty array).
-  List all stations using format: "Station Name (Line 1, Line 2) – X metres / Y min walk"
-  Mode translation: "tube" → "Underground Station", "elizabeth-line" → "Elizabeth Line", "overground" → "Overground", "national-rail" → "National Rail"
+  Format as a `<ul>` list. For each station, output one `<li>` using this exact pattern:
+  `<li><strong>Station Name Mode Label</strong> (Line 1, Line 2) – X m / Y min walk</li>`
+  Append the mode label directly after the station name (no parentheses around the mode):
+  "tube" → "Underground Station", "elizabeth-line" → "Elizabeth Line", "overground" → "Overground", "national-rail" → "National Rail"
+  Example: `<li><strong>Oxford Circus Underground Station</strong> (Bakerloo, Central, Victoria) – 67 m / 1 min walk</li>`
+  Do NOT wrap the entire line in outer parentheses. Do NOT put the mode label in a separate parenthetical.
   If the stations array is empty `[]`, OMIT this subsection entirely — no heading, no placeholder text.
 - Key local anchors
   You MUST include this subsection if anchor data is provided (non-empty array).
-  For each venue: state the name, translate the raw API category to a reader-friendly label (e.g. "poi" → use a specific term like "shop", "restaurant", "dining", or "hotel" based on context; "museum" → "museum"; "landmark" → "landmark"; never output raw API category values), state the distance in metres, and weave the why_relevant explanation into natural prose describing why that anchor draws visitors to the area. Do NOT prefix with labels like "Commercial relevance:" or "Why relevant:".
+  Format each anchor as its own `<p>` block with the name in `<strong>`, using this pattern:
+  `<p><strong>Anchor Name</strong> (reader-friendly category, X m) – natural prose explaining why this anchor draws visitors and generates foot traffic for the area.</p>`
+  Translate raw API category values to reader-friendly labels (e.g. "poi" → use a specific term like "shop", "restaurant", "dining", or "hotel" based on context; "museum" → "museum"; "landmark" → "landmark"). Raw API categories must NEVER appear in the output.
+  Weave the why_relevant explanation into the prose naturally. Do NOT prefix with labels like "Commercial relevance:" or "Why relevant:".
+  Each anchor must be a separate `<p>` — do NOT combine all anchors into one paragraph.
   If the anchors array is empty `[]`, OMIT this subsection entirely — no heading, no placeholder text.
 - Mix of businesses and types of shops/services
 - Trading patterns and foot traffic
