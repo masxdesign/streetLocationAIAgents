@@ -83,7 +83,7 @@ When generating the prompt for the writing executor, you MUST NOT include parent
    May appear 0–2 times only if natural.
    Secondary keywords:
    Use only if they fit naturally.
-   NEVER concatenate multiple keywords, location names, or postcodes into a single phrase or sentence (e.g. "commercial retail real estate Great Marlborough Street Soho W1B City of Westminster" is banned). Each keyword must be woven into a standalone, natural-sounding sentence. If a keyword cannot be used naturally, omit it entirely.
+   NEVER concatenate multiple keywords, location names, or postcodes into a single phrase or sentence. Each keyword must be woven into a standalone, natural-sounding sentence. If a keyword cannot be used naturally, omit it entirely.
 
 9) Length:
    Total 500–900 words.
