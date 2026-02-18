@@ -15,7 +15,7 @@ Article perspective: 60% occupier-focused (tenants, business owners), 40% invest
 - The phrase "Hidden insight" must NEVER appear as a heading, subheading, or label in the output. Use a natural, reader-friendly heading that fits the specific observation (e.g. "What's Changing Here", "An Emerging Trend", or any heading appropriate to the insight).
 - Raw API category labels (e.g. "poi") must NEVER appear in the output. Translate them to professional reader-friendly terms (e.g. "retail", "specialist retail", "dining", "hospitality").
 - Field-name prefixes like "Commercial relevance:" or "Why relevant:" must NEVER appear in the output. Integrate explanations as natural prose.
-- All <h3> subheadings must read as clean, professional headings suitable for a property consultancy report.
+- All <h3> subheadings must read as clean, reader-friendly headings that a business owner or entrepreneur would find clear and useful. NEVER use headings like "Strategic Market Observation" or "Emerging Commercial Dynamics" — these sound like industry reports.
 
 **1. LOCATION INTEGRITY:**
 - The article is about ONE street only (the primary location specified).
@@ -71,7 +71,18 @@ Article perspective: 60% occupier-focused (tenants, business owners), 40% invest
 - Professional tone suitable for both business owners and investors.
 - No casual language, hype, or marketing fluff.
 - Avoid directive or prescriptive language — present facts and observations, do not tell the reader what to do.
-- Use clear, professional language accessible to non-specialists. Prefer plain terms where possible (e.g. "foot traffic" over "footfall", "mix of businesses" over "tenant mix", "surrounding area" over "catchment"). However, when addressing investor considerations, you may use straightforward commercial terms like "rental yields", "tenant demand", "investment outlook", "market conditions" — these are essential for investor readers. Avoid planning jargon and overly technical property terminology.
+- MANDATORY LANGUAGE RULES — follow these substitutions with zero exceptions:
+  - Write "foot traffic" — NEVER write "footfall"
+  - Write "mix of businesses" — NEVER write "tenant mix"
+  - Write "surrounding area" — NEVER write "catchment"
+  - Write "business owners" or "tenants" — NEVER write "occupiers"
+  - Write "vacancy" — NEVER write "void" or "voids"
+  - Write "floor space" or "floor area" — NEVER write "floorplate" or "floorplates"
+  - Write "rentable" — NEVER write "lettable"
+  - Write "property management" — NEVER write "asset management"
+  - NEVER use: "capture rates", "comparison retail", "covenants", "dwell times"
+
+  ALLOWED investor terms (use sparingly, only in investor-focused passages): "rental yields", "tenant demand", "investment outlook", "market conditions", "capital growth". All other commercial real estate jargon is banned.
 - Do NOT invent statistics, rents, or company names.
 - If uncertain, speak in general terms.
 

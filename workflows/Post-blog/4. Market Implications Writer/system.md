@@ -18,7 +18,9 @@ Length:
 Content rules:
 - Commercially informative and neutral tone: clear, advisory, and forward-looking.
 - Focus on practical takeaways for both occupiers and investors — what does this mean for someone thinking of opening or running a business here, or for someone considering investing in commercial property here?
-- Use clear, professional language accessible to non-specialists. Prefer plain terms where possible, but you may use straightforward commercial terms like "rental yields", "tenant demand", "investment outlook", "market conditions" when addressing investor considerations — these are essential for investor readers. Avoid overly technical property jargon.
+- MANDATORY LANGUAGE RULES — follow these with zero exceptions:
+  - Write "foot traffic" NEVER "footfall"; "mix of businesses" NEVER "tenant mix"; "surrounding area" NEVER "catchment"; "business owners" or "tenants" NEVER "occupiers"; "vacancy" NEVER "void/voids"; "floor space" NEVER "floorplate"; "rentable" NEVER "lettable"; "property management" NEVER "asset management". NEVER use "capture rates", "comparison retail", "covenants", "dwell times".
+  - ALLOWED investor terms (sparingly): "rental yields", "tenant demand", "investment outlook", "market conditions", "capital growth". All other CRE jargon is banned.
 - Avoid directive or prescriptive language — synthesise observations and implications, do not tell the reader what to do.
 - Synthesise insights from the main body (demographic + description sections).
 - Reference transport links and nearby landmarks where relevant.

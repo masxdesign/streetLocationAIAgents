@@ -29,10 +29,10 @@ CRITICAL OUTPUT REQUIREMENTS FOR THE EXECUTOR (you must include these rules in y
 ### OUTPUT PURITY RULE (apply to all prompts you generate):
 When generating the prompt for the writing executor, you MUST NOT include parenthetical instruction labels, internal directives, or format markers in heading names or subsection titles. Specifically:
 - Never include "(MANDATORY)", "(MANDATORY subsection)", "(general, not numeric)", "(work, leisure, tourism, services)", "(weekday vs weekend, day vs evening)", or similar parenthetical directives in any heading or subsection title in your generated prompt.
-- Never use the phrase "Hidden insight explained commercially" or "Hidden insight" as a heading or label. Instead instruct the executor to weave the insight into a naturally-titled subsection (e.g. "Strategic Market Observation", "Emerging Commercial Dynamics", or a heading that fits the specific insight).
+- Never use the phrase "Hidden insight explained commercially" or "Hidden insight" as a heading or label. Instead instruct the executor to weave the insight into a naturally-titled subsection (e.g. "What's Changing Here", "An Emerging Trend", "A Shifting Pattern", or a heading that fits the specific insight). NEVER use "Strategic Market Observation" or "Emerging Commercial Dynamics" as headings — these sound like industry reports, not reader-friendly guides.
 - Never include raw API category labels (e.g. "poi") in format templates. Instruct the executor to translate raw categories to professional reader-friendly language.
 - Never include field-name prefixes like "Commercial relevance:" in the prompt. Instruct the executor to integrate explanations as natural prose.
-- The generated prompt must produce clean, professional headings that a reader would expect in a property consultancy report.
+- The generated prompt must produce clean, reader-friendly headings that a business owner or entrepreneur would find clear and useful.
 
 ### NON-NEGOTIABLE LOCATION RULES:
 1) The article is about {{ street }} ONLY – this is the primary location.
@@ -64,7 +64,18 @@ When generating the prompt for the writing executor, you MUST NOT include parent
    No hype or marketing fluff.
    Avoid directive or prescriptive language — present facts and observations, do not tell the reader what to do.
 
-5) Use clear, professional language accessible to non-specialists. Prefer plain terms where possible (e.g. "foot traffic" over "footfall", "mix of businesses" over "tenant mix", "surrounding area" over "catchment"). However, when addressing investor considerations, you may use straightforward commercial terms like "rental yields", "tenant demand", "investment outlook", "market conditions" — these are essential for investor readers. Avoid planning jargon and overly technical property terminology.
+5) MANDATORY LANGUAGE RULES — the executor MUST follow these substitutions with zero exceptions:
+   - Write "foot traffic" — NEVER write "footfall"
+   - Write "mix of businesses" — NEVER write "tenant mix"
+   - Write "surrounding area" — NEVER write "catchment"
+   - Write "business owners" or "tenants" — NEVER write "occupiers"
+   - Write "vacancy" — NEVER write "void" or "voids"
+   - Write "floor space" or "floor area" — NEVER write "floorplate" or "floorplates"
+   - Write "rentable" — NEVER write "lettable"
+   - Write "property management" — NEVER write "asset management"
+   - NEVER use: "capture rates", "comparison retail", "covenants", "dwell times"
+
+   ALLOWED investor terms (use sparingly, only in investor-focused passages): "rental yields", "tenant demand", "investment outlook", "market conditions", "capital growth". All other commercial real estate jargon is banned.
 
 6) Do NOT invent statistics, rents, or real company names.
    If something is uncertain, speak in general terms rather than using technical property language.

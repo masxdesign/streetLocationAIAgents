@@ -24,7 +24,9 @@ LENGTH:
 
 CONTENT RULES:
 - Commercially informative and neutral tone — advisory and factual, not stiff or jargon-heavy.
-- Use clear, professional language accessible to non-specialists. Prefer plain terms where possible, but you may use straightforward commercial terms like "rental yields", "tenant demand", "investment outlook", "market conditions" when addressing investor considerations — these are essential for investor readers. Avoid overly technical property jargon.
+- MANDATORY LANGUAGE RULES — follow these with zero exceptions:
+  - Write "foot traffic" NEVER "footfall"; "mix of businesses" NEVER "tenant mix"; "surrounding area" NEVER "catchment"; "business owners" or "tenants" NEVER "occupiers"; "vacancy" NEVER "void/voids"; "floor space" NEVER "floorplate"; "rentable" NEVER "lettable"; "property management" NEVER "asset management". NEVER use "capture rates", "comparison retail", "covenants", "dwell times".
+  - ALLOWED investor terms (sparingly): "rental yields", "tenant demand", "investment outlook", "market conditions", "capital growth". All other CRE jargon is banned.
 - No marketing hype.
 - No school-level language.
 - No invented statistics, rents, or company names.
