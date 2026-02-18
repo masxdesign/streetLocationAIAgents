@@ -112,8 +112,12 @@ When generating the prompt for the writing executor, you MUST NOT include parent
   `<li><strong>Station Name Mode Label</strong> (Line 1, Line 2) – X m / Y min walk</li>`
   Mode translation — append the translated label after the station name:
   "tube" → "Underground Station", "elizabeth-line" → "Elizabeth Line", "overground" → "Overground", "national-rail" → "National Rail"
-  DEDUPLICATION: If the station name already ends with the mode label (e.g. name = "Piccadilly Circus Underground Station" and mode = "tube"), do NOT append it again. Only append if the name does not already contain the mode label.
-  Example: `<li><strong>Oxford Circus Underground Station</strong> (Bakerloo, Central, Victoria) – 67 m / 1 min walk</li>`
+  DEDUPLICATION RULES:
+  a) If the station name already ends with the mode label (e.g. name = "Piccadilly Circus Underground Station" and mode = "tube"), do NOT append it again.
+  b) If the lines list contains only one entry and that entry already appears in the station name (e.g. name = "Tottenham Court Road Elizabeth Line" and lines = ["Elizabeth Line"]), OMIT the parenthetical lines entirely. Result: "Tottenham Court Road Elizabeth Line – 753 m / 9 min walk" (no redundant parenthetical).
+  c) If the lines list contains multiple entries but some duplicate the station name or mode label, remove only the duplicates and keep the remaining lines in parentheses.
+  Example (tube): `<li><strong>Oxford Circus Underground Station</strong> (Bakerloo, Central, Victoria) – 67 m / 1 min walk</li>`
+  Example (elizabeth-line): `<li><strong>Tottenham Court Road Elizabeth Line</strong> – 753 m / 9 min walk</li>`
   Do NOT wrap lines in outer parentheses. Do NOT put the mode label in a separate parenthetical.
   If station data is provided (non-empty array), include all stations from the array.
   If array is empty `[]`, instruct executor to OMIT this subsection entirely — no heading, no placeholder text.
