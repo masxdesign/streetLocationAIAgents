@@ -9,12 +9,6 @@ Location:
 - neighbourhood: {{ $json.neighbourhood }}
 - reference_point: {{ $json.reference_point }}
 
-Nearest Stations (pre-fetched from reliable API):
-{{ $json.nearest_stations }}
-
-Key Local Anchors (pre-fetched from reliable API):
-{{ $json.key_anchors }}
-
 Hidden insight:
 {{ $json.hidden_insight }}
 
@@ -35,10 +29,18 @@ Outline (source content from previous AI agent):
 CRITICAL REMINDER:
 - This article is about {{ $json.street }} ONLY.
 - Do NOT merge {{ $json.street }} with any other places in titles or body.
-- Transport stations and key anchors have been pre-fetched from reliable third-party APIs.
-- Use the provided nearest_stations array (with name, mode, lines, distance_m, walk_time_min) for the Transport section.
-- Use the provided key_anchors array (with name, category, distance_m, why_relevant) for the Key Local Anchors section. Translate raw API category values (e.g. "poi") to professional labels (e.g. "retail", "specialist retail", "dining"). Integrate why_relevant as natural prose — do NOT prefix with "Commercial relevance:" or similar labels.
-- If either array is empty, OMIT that subsection entirely — no heading, no placeholder text. Do NOT invent data.
+- "Purpose of visits" subsection = general activity categories ONLY (shopping, dining, tourism, commuting, etc.). ZERO venue names allowed.
+- Anchor names, categories, and distances belong ONLY in the "Key local anchors" subsection instruction. NEVER put them in "Purpose of visits" or any other subsection.
+- If either data array below is empty, OMIT that subsection entirely — no heading, no placeholder text. Do NOT invent data.
 - Area: Use the provided borough and neighbourhood exactly as given. They are now accurate.
   Borough: {{ $json.borough }}
   Neighbourhood: {{ $json.neighbourhood }}
+
+---
+APPENDIX A — TRANSPORT DATA (for "Transport and accessibility" subsection ONLY):
+{{ $json.nearest_stations }}
+
+---
+APPENDIX B — ANCHOR DATA (for "Key local anchors" subsection ONLY — NEVER use in "Purpose of visits"):
+{{ $json.key_anchors }}
+Translate raw API category values (e.g. "poi") to professional labels (e.g. "retail", "specialist retail", "dining"). Integrate why_relevant as natural prose — do NOT prefix with "Commercial relevance:" or similar labels.
