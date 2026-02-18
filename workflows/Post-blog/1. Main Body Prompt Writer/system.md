@@ -102,11 +102,7 @@ When generating the prompt for the writing executor, you MUST NOT include parent
 **Demographic section must cover via <h3> subheadings:**
 - Typical customer and user profile
 - Age and income profile — instruct executor to describe in general qualitative terms; do not use numeric figures
-- Purpose of visits — instruct executor to write as narrative prose about WHY people visit this street. Place names may appear within flowing sentences, but NEVER formatted as an anchor list. NO `<strong>` tags, NO distances, NO categories, NO "(type, X m)" patterns anywhere in this subsection.
-  Instruct executor with this contrast:
-  CORRECT: "Many visitors arrive for cultural reasons, with [name] and [name] drawing steady daytime traffic. Others come for shopping or dining in the surrounding restaurants and cafés."
-  WRONG: "**[Name]** (museum, 524 m) – a cultural anchor that brings daytime museum-goers..."
-  The WRONG format belongs ONLY in the Key local anchors subsection under Description.
+- Purpose of visits — instruct executor to describe the general REASONS and ACTIVITIES that bring people to this street: shopping, dining, cultural visits, commuting, nightlife, professional services, tourism, etc. Write 2–4 sentences of plain narrative prose. Do NOT name individual venues, landmarks, or anchors in this subsection — save all named places for the "Key local anchors" subsection under Description.
 - Temporal patterns — instruct executor to address weekday vs weekend and daytime vs evening dynamics
 - Whether demand is local or travel-in based
 - What this demographic means for businesses here — instruct executor to briefly note what the visitor/customer profile means for the types of businesses that tend to do well on this street, and mention rental demand only if it flows naturally

@@ -36,10 +36,7 @@ Article perspective: Write primarily for someone evaluating this street as a pla
 **In Demographic section (use <h3> subheadings for each):**
 - Typical customer and user profile
 - Age and income profile — describe in general qualitative terms; do not use numeric figures
-- Purpose of visits — write as narrative prose about WHY people visit this street. You may name specific places within flowing sentences, but NEVER format them as a list of anchors. NO `<strong>` tags, NO distances, NO categories, NO "(type, X m)" patterns anywhere in this subsection.
-  CORRECT: "Many visitors arrive for cultural reasons, with [name] and [name] drawing steady daytime traffic. Others come for shopping or dining in the surrounding restaurants and cafés."
-  WRONG: "**[Name]** (museum, 524 m) – a cultural anchor that brings daytime museum-goers..."
-  The WRONG format belongs ONLY in the Key local anchors subsection under Description.
+- Purpose of visits — describe the general REASONS and ACTIVITIES that bring people to this street: shopping, dining, cultural visits, commuting, nightlife, professional services, tourism, etc. Write 2–4 sentences of plain narrative prose. Do NOT name individual venues, landmarks, or anchors in this subsection — save all named places for the "Key local anchors" subsection under Description.
 - Temporal patterns — cover weekday vs weekend and daytime vs evening where relevant
 - Local vs travel-in demand
 - What this demographic means for businesses here — briefly note what the visitor/customer profile means for the types of businesses that tend to do well on this street; mention rental demand only if it flows naturally
