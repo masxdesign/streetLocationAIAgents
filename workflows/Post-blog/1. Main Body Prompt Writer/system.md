@@ -38,6 +38,7 @@ When generating the prompt for the writing executor, you MUST NOT include parent
    - The source data has been corrected and is now accurate.
    - Format: "Neighbourhood — Borough" if neighbourhood is provided, or "Borough" only if neighbourhood is not provided or empty.
    - Example: "Mayfair — City of Westminster" or "City of Westminster" or "City of London"
+   - Mention the area classification naturally within the "Overall commercial character" subsection. Do NOT create a standalone "Location and area classification" section or heading.
 4) If nearby places/developments data is provided and non-empty, list them in a separate "Nearby notable places (within X m)" section at the END of the Description section. If no nearby places data exists or the array is empty, OMIT this section entirely — do not output the heading or any placeholder text.
 
 ### HTML OUTPUT RULES:

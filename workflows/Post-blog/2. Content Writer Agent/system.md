@@ -19,6 +19,7 @@ Article perspective: Write primarily for someone evaluating this street as a pla
 - Use the provided borough and neighbourhood exactly as given. The source data has been corrected and is now accurate.
 - Format area as: "Neighbourhood — Borough" if neighbourhood is provided, or "Borough only" if neighbourhood is not provided or empty.
 - Example: "Mayfair — City of Westminster" or "City of Westminster" or "City of London"
+- Mention the area classification naturally within the "Overall commercial character" subsection. Do NOT create a standalone "Location and area classification" section or heading.
 - If nearby places/developments are mentioned, list them in a separate "Nearby notable places (within X m)" section at the END of the Description section.
 
 **2. HTML OUTPUT RULES:**
