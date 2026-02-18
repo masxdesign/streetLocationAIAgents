@@ -110,8 +110,9 @@ When generating the prompt for the writing executor, you MUST NOT include parent
   Instruct executor: this subsection is required if station data is provided (non-empty array).
   Format as a `<ul>` list. For each station, output one `<li>` using this exact pattern:
   `<li><strong>Station Name Mode Label</strong> (Line 1, Line 2) – X m / Y min walk</li>`
-  Append the mode label directly after the station name (no parentheses around the mode):
+  Mode translation — append the translated label after the station name:
   "tube" → "Underground Station", "elizabeth-line" → "Elizabeth Line", "overground" → "Overground", "national-rail" → "National Rail"
+  DEDUPLICATION: If the station name already ends with the mode label (e.g. name = "Piccadilly Circus Underground Station" and mode = "tube"), do NOT append it again. Only append if the name does not already contain the mode label.
   Example: `<li><strong>Oxford Circus Underground Station</strong> (Bakerloo, Central, Victoria) – 67 m / 1 min walk</li>`
   Do NOT wrap lines in outer parentheses. Do NOT put the mode label in a separate parenthetical.
   If station data is provided (non-empty array), include all stations from the array.

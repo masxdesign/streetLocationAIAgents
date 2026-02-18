@@ -45,8 +45,9 @@ Article perspective: Write primarily for someone evaluating this street as a pla
   You MUST include this subsection if transport data is provided (non-empty array).
   Format as a `<ul>` list. For each station, output one `<li>` using this exact pattern:
   `<li><strong>Station Name Mode Label</strong> (Line 1, Line 2) – X m / Y min walk</li>`
-  Append the mode label directly after the station name (no parentheses around the mode):
+  Mode translation — append the translated label after the station name:
   "tube" → "Underground Station", "elizabeth-line" → "Elizabeth Line", "overground" → "Overground", "national-rail" → "National Rail"
+  DEDUPLICATION: If the station name already ends with the mode label (e.g. name = "Piccadilly Circus Underground Station" and mode = "tube"), do NOT append it again. Only append if the name does not already contain the mode label.
   Example: `<li><strong>Oxford Circus Underground Station</strong> (Bakerloo, Central, Victoria) – 67 m / 1 min walk</li>`
   Do NOT wrap the entire line in outer parentheses. Do NOT put the mode label in a separate parenthetical.
   If the stations array is empty `[]`, OMIT this subsection entirely — no heading, no placeholder text.
