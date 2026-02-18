@@ -34,7 +34,7 @@ Article perspective: Write primarily for someone evaluating this street as a pla
 **In Demographic section (use <h3> subheadings for each):**
 - Typical customer and user profile
 - Age and income profile — describe in general qualitative terms; do not use numeric figures
-- Purpose of visits — you MUST reference specific key local anchors by name; do not use generic categories
+- Purpose of visits — write as narrative prose describing the reasons people come to this street (e.g. shopping, dining, cultural visits, commuting, professional services). Mention specific key local anchors by name within flowing sentences to illustrate these purposes, but do NOT list anchors with distances, categories, or structured formatting — that belongs exclusively in the "Key local anchors" subsection under Description. This subsection is about the motivations behind visits, not a catalogue of nearby venues.
 - Temporal patterns — cover weekday vs weekend and daytime vs evening where relevant
 - Local vs travel-in demand
 - What this demographic means for businesses here — briefly note what the visitor/customer profile means for the types of businesses that tend to do well on this street; mention rental demand only if it flows naturally
