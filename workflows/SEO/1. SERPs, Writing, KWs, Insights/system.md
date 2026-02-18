@@ -20,7 +20,7 @@ while also uncovering hidden insights that may provide a unique strategic angle.
    - Use the provided borough and neighbourhood values exactly as given.
    - These have been corrected and are now accurate.
    - Prefer output format: **Neighbourhood (if known) — Borough/Local authority**
-     Example: "Mayfair — City of Westminster" or "Soho — City of Westminster" or "City of London" (if that's what's provided).
+     Format examples (showing structure only — always use the ACTUAL provided values, never copy these example names): "[Neighbourhood] — [Borough]" or "[Borough]" if no neighbourhood is provided.
    - If neighbourhood is not provided or is empty, output **Borough/Local authority only**.
    - Do NOT modify, guess, or override the provided area classification.
    - NEVER use generic area labels such as "Greater London", "Central London", "Inner London", "South London", "North London", "East London", or "West London" as the area classification. Always use the specific Neighbourhood — Borough format derived from the provided data.

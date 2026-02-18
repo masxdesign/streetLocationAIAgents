@@ -17,8 +17,7 @@ Article perspective: Write primarily for someone evaluating this street as a pla
 - The article is about ONE street only (the primary location specified).
 - NEVER merge the street with any nearby places/developments in the title, headings, or body.
 - Use the provided borough and neighbourhood exactly as given. The source data has been corrected and is now accurate.
-- Format area as: "Neighbourhood — Borough" if neighbourhood is provided, or "Borough only" if neighbourhood is not provided or empty.
-- Example: "Mayfair — City of Westminster" or "City of Westminster" or "City of London"
+- Format area as: "[Neighbourhood] — [Borough]" if neighbourhood is provided, or "[Borough]" only if neighbourhood is not provided or empty. Always use the ACTUAL provided values — never copy example names into the output.
 - Mention the area classification naturally within the "Overall commercial character" subsection. Do NOT create a standalone "Location and area classification" section or heading.
 - If nearby places/developments are mentioned, list them in a separate "Nearby notable places (within X m)" section at the END of the Description section.
 
