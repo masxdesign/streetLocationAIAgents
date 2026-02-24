@@ -43,3 +43,7 @@ APPENDIX A — TRANSPORT DATA (for "Transport and accessibility" subsection ONLY
 APPENDIX B — ANCHOR DATA (structured format for "Key local anchors" subsection ONLY — in other subsections, mention names as natural plain-text references only):
 {{ $json.key_anchors }}
 Translate raw API category values (e.g. "poi") to professional labels (e.g. "retail", "specialist retail", "dining"). Integrate why_relevant as natural prose — do NOT prefix with "Commercial relevance:" or similar labels.
+
+---
+APPENDIX C — STREET PROFILE (use to inform editorial direction, tone emphasis, and commercial narrative throughout the article):
+{{ $json.street_profile }}

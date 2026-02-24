@@ -157,13 +157,16 @@ When generating the prompt for the writing executor, you MUST NOT include parent
   ]
 - Key anchors data structure (pre-fetched from API):
   key_anchors: [
-    {name: "X", category: "Y", distance_m: Z, why_relevant: "W"}
+    {name: "X", category: "Y", lat: 51.XXX, lon: -0.XXX, distance_m: Z, why_relevant: "W"}
   ]
+- Street profile data structure (pre-fetched from API):
+  street_profile: {footfall_signal: "X", retail_mix: "X", evening_economy: "X", connectivity: "X", blog_angle: "Y"}
 - ANCHOR DATA ROUTING (HARD CONSTRAINT):
   Structured anchor data (categories, distances, why_relevant, "(type, X m)" patterns) must ONLY appear in the "Key local anchors" subsection instruction.
   In other subsections (including "Purpose of visits"), anchor names may be referenced as plain text within narrative prose, but NEVER with structured formatting (no categories, no distances, no bold, no list entries).
 - If these arrays are empty `[]`, instruct executor to OMIT those subsections entirely — no heading, no placeholder text. Do NOT invent data and do NOT write "not available" or any similar placeholder.
 - These are reliable third-party data sources - do not question their accuracy.
+- Use the street_profile to inform the overall tone, emphasis, and commercial narrative. The blog_angle should guide the article's editorial direction. Do NOT output the street_profile fields verbatim — weave them naturally into the writing instructions.
 
 ### Hidden Insight handling:
 - Do NOT quote the Hidden Insight.
