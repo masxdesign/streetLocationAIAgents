@@ -1,3 +1,3 @@
 LOCATION_NAME: {{ $json.street }}
 POSTCODE: {{ $json.postcode }}
-CITY: London
+CITY: {{ $json.suburb || $json.borough || $json.neighbourhood || 'London' }}
