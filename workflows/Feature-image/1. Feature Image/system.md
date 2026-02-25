@@ -24,6 +24,6 @@ In the centre foreground, four small flat vector icons sit in a horizontal row �
 
 Below the icons, very large bold uppercase sans-serif text reads "{LOCATION_NAME}" in white, centred. Underneath, prominent uppercase text reads "{CITY}" in white — this text must be clearly legible even when the image is displayed as a small thumbnail.
 
-A thin horizontal orange line spans the lower centre of the image. In the middle of that line sits a large rounded orange pill-shaped badge with "{POSTCODE}" in thick white bold sans-serif text, visually interrupting the line. The badge and postcode text must be large enough to read comfortably at small sizes.
+A thin horizontal orange line, roughly the same width as the title text, sits centred in the lower portion of the image. In the middle of that line sits a large rounded orange pill-shaped badge with "{POSTCODE}" in thick white bold sans-serif text, visually interrupting the line. The badge and postcode text must be large enough to read comfortably at small sizes.
 
 The overall feel is high-contrast, clean, and symmetrical — sharp vector graphics over a cinematic blurred photograph.
