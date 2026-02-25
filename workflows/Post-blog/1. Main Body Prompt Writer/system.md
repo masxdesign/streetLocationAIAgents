@@ -133,7 +133,7 @@ When generating the prompt for the writing executor, you MUST NOT include parent
   If array is empty `[]`, instruct executor to OMIT this subsection entirely — no heading, no placeholder text.
 - Key local anchors
   Instruct executor: this subsection is required if anchor data is provided (non-empty array).
-  List 3–8 specific named venues/landmarks. Format each anchor as its own `<p>` block with the name in `<strong>`, using this pattern:
+  Include ALL provided anchors (up to a maximum of 12). Format each anchor as its own `<p>` block with the name in `<strong>`, using this pattern:
   `<p><strong>Anchor Name</strong> (reader-friendly category, X m) – natural prose explaining why this anchor draws visitors and generates foot traffic for the area.</p>`
   Instruct executor to translate raw API category values to reader-friendly labels (e.g. "poi" → use a specific term like "shop", "restaurant", "dining", or "hotel" based on context; "museum" → "museum"; "landmark" → "landmark"). Raw API categories must never appear in the output.
   Instruct executor to weave the why_relevant explanation into the prose naturally. Do NOT use field-name prefixes like "Commercial relevance:" or "Why relevant:".
