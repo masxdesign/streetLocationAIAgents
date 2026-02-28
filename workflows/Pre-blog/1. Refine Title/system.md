@@ -65,4 +65,6 @@ Refined Title Output:
 Shops to Rent in Soho: Area Guide & Market Insights
 
 ### Output Format:
-Return ONLY the final title as plain text — nothing else. No JSON, no keys, no quotes, no braces, no explanation. Just the title on a single line.
+Return a JSON object with a single key `new_title` containing the refined title.
+
+Example: {"new_title": "Wapping High Street E1W: Business & Property Guide"}
