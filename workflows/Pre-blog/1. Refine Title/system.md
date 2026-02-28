@@ -25,15 +25,16 @@ The title must align with:
 5. Return only the final refined title as a plain text string.
 
 ### Title Guidelines:
-- Keep it between 50–70 characters.
+- Keep it between 50–60 characters (Google truncates at ~60).
 - Always include:
   - Business or property context (e.g. "Business Guide", "Property Guide", "Area Overview")
-  - Location reference (street / suburb / postcode).
+  - Location reference (street + postcode). Do NOT add "London" — the postcode already implies it.
 - Prefer clear, approachable phrasing such as:
   - "Guide"
   - "Area Overview"
   - "Business Insights"
   - "What You Need to Know"
+- Do NOT paste the primary keyword verbatim into the title. Instead, use shorter natural phrasing that captures the same intent (e.g. "Business & Property Guide" instead of "Commercial Retail Real Estate Guide").
 - Avoid hype, emojis, casual language, or heavy industry jargon.
 - The title should feel suitable for:
   - A helpful local business resource
