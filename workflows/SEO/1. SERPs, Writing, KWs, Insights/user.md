@@ -1,6 +1,6 @@
 Use the given:
-Title Template: {{ $json.seed.title }}
-Description: {{ $json.seed.tone_description }}
+Title Template: {{ $json.seed_title }}
+Description: {{ $json.seed_tone }}
 Location: 
 - street = {{ $json.street }}
 - suburb = {{ $json.suburb }}
@@ -11,7 +11,7 @@ Location:
 - reference_point = {{ $json.reference_point }} (lat/lon)
 
 And the Tavily SERP Results tool to perform research for the primary keyword:
-{{ $json.seed.keyword }}
+{{ $json.seed_keyword }}
 
 Context:
 This article is about commercial retail real estate for the given location.
@@ -53,7 +53,7 @@ Tavily tool arguments schema:
 {"q":"<string>"}
 
 Build q from:
-keyword = {{ $json.seed.keyword }}
+keyword = {{ $json.seed_keyword }}
 street = {{ $json.street }}
 suburb = {{ $json.suburb }}
 postcode = {{ $json.postcode }}
