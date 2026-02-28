@@ -47,3 +47,7 @@ Translate raw API category values (e.g. "poi") to professional labels (e.g. "ret
 ---
 APPENDIX C — STREET PROFILE (use to inform editorial direction, tone emphasis, and commercial narrative throughout the article):
 {{ $json.street_profile }}
+
+---
+APPENDIX D — LONG-TAIL SEARCH QUERIES (weave answers to these naturally into the article prose — do NOT create a FAQ section or list them explicitly):
+{{ $json.keywords_long_tail_keywords }}

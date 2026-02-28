@@ -167,6 +167,10 @@ When generating the prompt for the writing executor, you MUST NOT include parent
 - If these arrays are empty `[]`, instruct executor to OMIT those subsections entirely — no heading, no placeholder text. Do NOT invent data and do NOT write "not available" or any similar placeholder.
 - These are reliable third-party data sources - do not question their accuracy.
 - Use the street_profile to inform the overall tone, emphasis, and commercial narrative. The blog_angle should guide the article's editorial direction. Do NOT output the street_profile fields verbatim — weave them naturally into the writing instructions.
+- Long-tail search queries (pre-extracted from SEO analysis):
+  keywords_long_tail_keywords: ["query 1", "query 2", ...]
+- Instruct executor to naturally address these queries within relevant subsections. Do NOT create a FAQ section, do NOT list them as questions, and do NOT quote them verbatim. Instead, ensure the article's prose answers these queries organically so the content ranks for long-tail searches.
+- If the array is empty `[]`, ignore — no action needed.
 
 ### Hidden Insight handling:
 - Do NOT quote the Hidden Insight.
