@@ -64,4 +64,4 @@ Refined Title Output:
 Shops to Rent in Soho: Area Guide & Market Insights
 
 ### Output Format:
-Return only the value of "refined_title" as plain text. Do not include JSON, quotes, braces, or any other formatting. Output the title exactly as a string.
+Return ONLY the final title as plain text — nothing else. No JSON, no keys, no quotes, no braces, no explanation. Just the title on a single line.
