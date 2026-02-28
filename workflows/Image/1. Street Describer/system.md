@@ -18,5 +18,8 @@ Write 2-3 sentences describing the VISUAL APPEARANCE of this street as if someon
 - Do NOT invent specific colours, signs, or details you cannot reasonably infer
 - If you genuinely know what this street looks like from your training data, use that knowledge
 - If you don't recognise the street, infer a plausible appearance from the data provided
-- Output plain text only — no JSON, no markdown, no bullet points
 - Keep it concise: 2-3 sentences, roughly 40-70 words
+
+### Output Format:
+Return a JSON object with a single key `street_description` containing the visual description.
+Example: {"street_description": "A broad Victorian high street lined with ornate stone-fronted buildings and large glass shopfronts displaying polished signage. The wide pavement bustles with pedestrians passing department stores and chain restaurants, while red buses queue along the busy road. The architecture is a confident mix of late-19th-century commercial grandeur and modern retail insertions."}
