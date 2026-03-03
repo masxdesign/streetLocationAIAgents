@@ -1,272 +1,272 @@
 {
-  "name": "Cluster Pillar Post Generation",
-  "nodes": [
-    {
-      "parameters": {},
-      "name": "Start",
-      "type": "n8n-nodes-base.manualTrigger",
-      "typeVersion": 1,
-      "position": [
-        200,
-        300
-      ]
-    },
-    {
-      "parameters": {
-        "method": "POST",
-        "url": "https://api.4prop.com/graphql",
-        "sendHeaders": true,
-        "headerParameters": {
-          "parameters": [
-            {
-              "name": "Content-Type",
-              "value": "application/json"
-            },
-            {
-              "name": "X-API-Key",
-              "value": "YOUR_KEY"
-            }
-          ]
+    "name": "Cluster Pillar Post Generation",
+    "nodes": [
+        {
+            "parameters": {},
+            "name": "Start",
+            "type": "n8n-nodes-base.manualTrigger",
+            "typeVersion": 1,
+            "position": [
+                200,
+                300
+            ]
         },
-        "sendBody": true,
-        "bodyParameters": {
-          "parameters": [
-            {
-              "name": "query",
-              "value": "{ streetLocationsByIds(ids: [42, 43, 44]) { id street postcode lat lon } }"
-            }
-          ]
+        {
+            "parameters": {
+                "method": "POST",
+                "url": "https://api.4prop.com/graphql",
+                "sendHeaders": true,
+                "headerParameters": {
+                    "parameters": [
+                        {
+                            "name": "Content-Type",
+                            "value": "application/json"
+                        },
+                        {
+                            "name": "X-API-Key",
+                            "value": "YOUR_KEY"
+                        }
+                    ]
+                },
+                "sendBody": true,
+                "bodyParameters": {
+                    "parameters": [
+                        {
+                            "name": "query",
+                            "value": "{ streetLocationsByIds(ids: [IDS HERE]) { id new_title draft_markdown } }"
+                        }
+                    ]
+                },
+                "options": {}
+            },
+            "name": "Fetch Supporting Posts",
+            "type": "n8n-nodes-base.httpRequest",
+            "typeVersion": 4,
+            "position": [
+                400,
+                300
+            ]
         },
-        "options": {}
-      },
-      "name": "Fetch Supporting Posts",
-      "type": "n8n-nodes-base.httpRequest",
-      "typeVersion": 4,
-      "position": [
-        400,
-        300
-      ]
-    },
-    {
-      "parameters": {
-        "fieldToSplitOut": "data.streetLocationsByIds",
-        "options": {}
-      },
-      "name": "Item Lists (Split Out)",
-      "type": "n8n-nodes-base.itemLists",
-      "typeVersion": 2,
-      "position": [
-        600,
-        300
-      ]
-    },
-    {
-      "parameters": {
-        "resource": "chat",
-        "model": "gpt-4",
-        "messages": {
-          "messageValues": [
-            {
-              "role": "system",
-              "content": "You are an expert Content Analyst and Summarizer. Your goal is to read a full-length blog post and distill its core message into a concise summary.\n\nRules for the Summary:\n1. Output length MUST be exactly 2 to 3 sentences. No more, no less.\n2. Focus ONLY on the primary takeaway, the \"why it matters,\" and the main actionable advice from the post. \n3. Do not include introductory phrases like \"This article discusses...\" or \"The main point is...\". Start directly with the core concept.\n4. Output plain text only. No markdown formatting, no bullet points, and no quotes."
+        {
+            "parameters": {
+                "fieldToSplitOut": "data.streetLocationsByIds",
+                "options": {}
             },
-            {
-              "role": "user",
-              "content": "=Please summarize the following supporting blog post.\n\nTitle: {{ $json.street }}\n\nFull Article Text:\n{{ $json.street }} in {{ $json.postcode }} coordinates: {{ $json.lat }}, {{ $json.lon }}\n\nProvide the 2-3 sentence summary."
-            }
-          ]
-        }
-      },
-      "name": "1. Content Summarizer",
-      "type": "n8n-nodes-base.openAi",
-      "typeVersion": 1,
-      "position": [
-        800,
-        300
-      ]
-    },
-    {
-      "parameters": {
-        "operation": "aggregateItems",
-        "fieldsToAggregate": {
-          "fieldToAggregate": [
-            {
-              "fieldToAggregate": "message.content",
-              "renameField": "summary"
-            },
-            {
-              "fieldToAggregate": "street",
-              "renameField": "title"
-            },
-            {
-              "fieldToAggregate": "id",
-              "renameField": "id"
-            }
-          ]
+            "name": "Item Lists (Split Out)",
+            "type": "n8n-nodes-base.itemLists",
+            "typeVersion": 2,
+            "position": [
+                600,
+                300
+            ]
         },
-        "options": {}
-      },
-      "name": "Aggregate Summaries",
-      "type": "n8n-nodes-base.itemLists",
-      "typeVersion": 2,
-      "position": [
-        1000,
-        300
-      ]
-    },
-    {
-      "parameters": {
-        "resource": "chat",
-        "model": "gpt-4",
-        "messages": {
-          "messageValues": [
-            {
-              "role": "system",
-              "content": "You are an expert SEO Content Strategist and Information Architect. Your goal is to create a logical, comprehensive outline for a \"Pillar Content\" blog post.\n\nYou will be provided with an overall core topic and a list of supporting post titles and concepts. Group these into logical sections.\n\nRules for the Outline:\n1. Output STRICTLY in Markdown format.\n2. The main title should be an H1 (`#`).\n3. Main sections should be H2 (`##`).\n4. Sub-sections (for specific supporting posts) should be H3 (`###`).\n5. Use bullet points (`- `) to briefly list what will be discussed under each heading.\n6. DO NOT include any conversational text before or after the outline. Output ONLY valid Markdown."
+        {
+            "parameters": {
+                "resource": "chat",
+                "model": "gpt-4",
+                "messages": {
+                    "messageValues": [
+                        {
+                            "role": "system",
+                            "content": "You are an expert Content Analyst and Summarizer. Your goal is to read a full-length blog post and distill its core message into a concise summary.\n\nRules for the Summary:\n1. Output length MUST be exactly 2 to 3 sentences. No more, no less.\n2. Focus ONLY on the primary takeaway, the \"why it matters,\" and the main actionable advice from the post. \n3. Do not include introductory phrases like \"This article discusses...\" or \"The main point is...\". Start directly with the core concept.\n4. Output plain text only. No markdown formatting, no bullet points, and no quotes."
+                        },
+                        {
+                            "role": "user",
+                            "content": "=Please summarize the following supporting blog post.\n\nTitle: {{ $json.new_title }}\n\nFull Article Text:\n{{ $json.draft_markdown }}\n\nProvide the 2-3 sentence summary."
+                        }
+                    ]
+                }
             },
-            {
-              "role": "user",
-              "content": "=Please create a structural outline for a Pillar Post about our core topic: {{ $json.pillar_topic }}\n\nSupporting posts to include:\n{{ JSON.stringify($json.data) }}\n\nGenerate the Markdown outline."
-            }
-          ]
-        }
-      },
-      "name": "2. Information Architect",
-      "type": "n8n-nodes-base.openAi",
-      "typeVersion": 1,
-      "position": [
-        1200,
-        300
-      ]
-    },
-    {
-      "parameters": {
-        "resource": "chat",
-        "model": "gpt-4",
-        "messages": {
-          "messageValues": [
-            {
-              "role": "system",
-              "content": "You are a top-tier Tech & Marketing Copywriter responsible for drafting a comprehensive \"Pillar Post.\"\n\nRules for Writing:\n1. Tone: Authoritative, engaging, and highly readable.\n2. Format: Output STRICTLY in Markdown. Use `##` and `###` for headers as indicated by the outline. Use bold (`**text**`) for emphasis, and standard Markdown bullet lists (`- `) where appropriate.\n3. Keep paragraphs very short (2-3 sentences max).\n4. For each supporting subtopic in the outline, write a 1-2 paragraph high-level summary. Do not dive deep into details.\n5. INTERNAL LINKING PLACEHOLDERS (CRITICAL): At the end of every supporting subtopic summary, include a Markdown call-to-action link using this EXACT format:\n[descriptive anchor text](/placeholder/id/{post_id_here})\n\nExample:\nIf you want to master this specific strategy, check out our complete guide on [how to execute advanced on-page SEO](/placeholder/id/105).\n\nNever use real or invented URLs. Only use the /placeholder/id/{id} format.\nDO NOT include any conversational text like \"Here is your draft\". Output ONLY the raw Markdown draft."
+            "name": "1. Content Summarizer",
+            "type": "n8n-nodes-base.openAi",
+            "typeVersion": 1,
+            "position": [
+                800,
+                300
+            ]
+        },
+        {
+            "parameters": {
+                "operation": "aggregateItems",
+                "fieldsToAggregate": {
+                    "fieldToAggregate": [
+                        {
+                            "fieldToAggregate": "message.content",
+                            "renameField": "summary"
+                        },
+                        {
+                            "fieldToAggregate": "new_title",
+                            "renameField": "title"
+                        },
+                        {
+                            "fieldToAggregate": "id",
+                            "renameField": "id"
+                        }
+                    ]
+                },
+                "options": {}
             },
-            {
-              "role": "user",
-              "content": "=Write the full text for the Pillar Post based on this data:\n\nCore Topic: {{ $('2. Information Architect').first().json.pillar_topic }}\n\nOutline:\n{{ $json.message.content }}\n\nSupporting topics & IDs for link placeholders:\n{{ JSON.stringify($('Aggregate Summaries').first().json.data) }}\n\nWrite the complete draft in plain Markdown format now."
-            }
-          ]
-        }
-      },
-      "name": "3. Content Synthesizer",
-      "type": "n8n-nodes-base.openAi",
-      "typeVersion": 1,
-      "position": [
-        1400,
-        300
-      ]
-    },
-    {
-      "parameters": {
-        "resource": "chat",
-        "model": "gpt-4",
-        "messages": {
-          "messageValues": [
-            {
-              "role": "system",
-              "content": "You are an elite SEO Editor and Quality Assurance Specialist. Your job is to review a draft of a Pillar Post and optimize it for maximum search engine visibility and user experience.\n\nYour Review Checklist:\n1. Markdown Enforcement: Ensure the text uses `#`, `##`, and `###` for headers correctly. Ensure lists use `- ` formatting.\n2. Readability: Ensure paragraphs are short and punchy.\n3. Keyword Optimization: Incorporate the primary broad keyword naturally into the intro, at least one H2, and the conclusion (do not keyword stuff).\n4. PLACEHOLDER VALIDATION (CRITICAL): Verify that every supporting subtopic section contains a Markdown link in the EXACT format: [anchor text](/placeholder/id/{post_id_here}). Do not alter or replace these placeholder paths. If they are missing or malformed, restore them using the context and the provided ID list.\n\nCRITICAL OUTPUT RULE: \nYou must output ONLY raw, valid Markdown text. Do not wrap the output in markdown code blocks (e.g., do not use ```markdown). Do not include phrases like \"Here is the revised draft:\" or \"I have optimized the post.\" Start immediately with the `# Title` and end with the last sentence of the conclusion."
+            "name": "Aggregate Summaries",
+            "type": "n8n-nodes-base.itemLists",
+            "typeVersion": 2,
+            "position": [
+                1000,
+                300
+            ]
+        },
+        {
+            "parameters": {
+                "resource": "chat",
+                "model": "gpt-4",
+                "messages": {
+                    "messageValues": [
+                        {
+                            "role": "system",
+                            "content": "You are an expert SEO Content Strategist and Information Architect. Your goal is to create a logical, comprehensive outline for a \"Pillar Content\" blog post.\n\nYou will be provided with an overall core topic and a list of supporting post titles and concepts. Group these into logical sections.\n\nRules for the Outline:\n1. Output STRICTLY in Markdown format.\n2. The main title should be an H1 (`#`).\n3. Main sections should be H2 (`##`).\n4. Sub-sections (for specific supporting posts) should be H3 (`###`).\n5. Use bullet points (`- `) to briefly list what will be discussed under each heading.\n6. DO NOT include any conversational text before or after the outline. Output ONLY valid Markdown."
+                        },
+                        {
+                            "role": "user",
+                            "content": "=Please create a structural outline for a Pillar Post about our core topic: {{ $json.pillar_topic }}\n\nSupporting posts to include:\n{{ JSON.stringify($json.data) }}\n\nGenerate the Markdown outline."
+                        }
+                    ]
+                }
             },
-            {
-              "role": "user",
-              "content": "=Please review, edit, and optimize the following Pillar Post draft. \n\nTarget Keyword: {{ $('2. Information Architect').first().json.pillar_topic }}\n\nRequired Link IDs:\n{{ JSON.stringify($('Aggregate Summaries').first().json.data) }}\n\nDraft to review:\n{{ $json.message.content }}\n\nOutput ONLY the final, raw Markdown text."
-            }
-          ]
+            "name": "2. Information Architect",
+            "type": "n8n-nodes-base.openAi",
+            "typeVersion": 1,
+            "position": [
+                1200,
+                300
+            ]
+        },
+        {
+            "parameters": {
+                "resource": "chat",
+                "model": "gpt-4",
+                "messages": {
+                    "messageValues": [
+                        {
+                            "role": "system",
+                            "content": "You are a top-tier Tech & Marketing Copywriter responsible for drafting a comprehensive \"Pillar Post.\"\n\nRules for Writing:\n1. Tone: Authoritative, engaging, and highly readable.\n2. Format: Output STRICTLY in Markdown. Use `##` and `###` for headers as indicated by the outline. Use bold (`**text**`) for emphasis, and standard Markdown bullet lists (`- `) where appropriate.\n3. Keep paragraphs very short (2-3 sentences max).\n4. For each supporting subtopic in the outline, write a 1-2 paragraph high-level summary. Do not dive deep into details.\n5. INTERNAL LINKING PLACEHOLDERS (CRITICAL): At the end of every supporting subtopic summary, include a Markdown call-to-action link using this EXACT format:\n[descriptive anchor text](/placeholder/id/{post_id_here})\n\nExample:\nIf you want to master this specific strategy, check out our complete guide on [how to execute advanced on-page SEO](/placeholder/id/105).\n\nNever use real or invented URLs. Only use the /placeholder/id/{id} format.\nDO NOT include any conversational text like \"Here is your draft\". Output ONLY the raw Markdown draft."
+                        },
+                        {
+                            "role": "user",
+                            "content": "=Write the full text for the Pillar Post based on this data:\n\nCore Topic: {{ $('2. Information Architect').first().json.pillar_topic }}\n\nOutline:\n{{ $json.message.content }}\n\nSupporting topics & IDs for link placeholders:\n{{ JSON.stringify($('Aggregate Summaries').first().json.data) }}\n\nWrite the complete draft in plain Markdown format now."
+                        }
+                    ]
+                }
+            },
+            "name": "3. Content Synthesizer",
+            "type": "n8n-nodes-base.openAi",
+            "typeVersion": 1,
+            "position": [
+                1400,
+                300
+            ]
+        },
+        {
+            "parameters": {
+                "resource": "chat",
+                "model": "gpt-4",
+                "messages": {
+                    "messageValues": [
+                        {
+                            "role": "system",
+                            "content": "You are an elite SEO Editor and Quality Assurance Specialist. Your job is to review a draft of a Pillar Post and optimize it for maximum search engine visibility and user experience.\n\nYour Review Checklist:\n1. Markdown Enforcement: Ensure the text uses `#`, `##`, and `###` for headers correctly. Ensure lists use `- ` formatting.\n2. Readability: Ensure paragraphs are short and punchy.\n3. Keyword Optimization: Incorporate the primary broad keyword naturally into the intro, at least one H2, and the conclusion (do not keyword stuff).\n4. PLACEHOLDER VALIDATION (CRITICAL): Verify that every supporting subtopic section contains a Markdown link in the EXACT format: [anchor text](/placeholder/id/{post_id_here}). Do not alter or replace these placeholder paths. If they are missing or malformed, restore them using the context and the provided ID list.\n\nCRITICAL OUTPUT RULE: \nYou must output ONLY raw, valid Markdown text. Do not wrap the output in markdown code blocks (e.g., do not use ```markdown). Do not include phrases like \"Here is the revised draft:\" or \"I have optimized the post.\" Start immediately with the `# Title` and end with the last sentence of the conclusion."
+                        },
+                        {
+                            "role": "user",
+                            "content": "=Please review, edit, and optimize the following Pillar Post draft. \n\nTarget Keyword: {{ $('2. Information Architect').first().json.pillar_topic }}\n\nRequired Link IDs:\n{{ JSON.stringify($('Aggregate Summaries').first().json.data) }}\n\nDraft to review:\n{{ $json.message.content }}\n\nOutput ONLY the final, raw Markdown text."
+                        }
+                    ]
+                }
+            },
+            "name": "4. SEO Optimizer",
+            "type": "n8n-nodes-base.openAi",
+            "typeVersion": 1,
+            "position": [
+                1600,
+                300
+            ]
         }
-      },
-      "name": "4. SEO Optimizer",
-      "type": "n8n-nodes-base.openAi",
-      "typeVersion": 1,
-      "position": [
-        1600,
-        300
-      ]
+    ],
+    "connections": {
+        "Start": {
+            "main": [
+                [
+                    {
+                        "node": "Fetch Supporting Posts",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "Fetch Supporting Posts": {
+            "main": [
+                [
+                    {
+                        "node": "Item Lists (Split Out)",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "Item Lists (Split Out)": {
+            "main": [
+                [
+                    {
+                        "node": "1. Content Summarizer",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "1. Content Summarizer": {
+            "main": [
+                [
+                    {
+                        "node": "Aggregate Summaries",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "Aggregate Summaries": {
+            "main": [
+                [
+                    {
+                        "node": "2. Information Architect",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "2. Information Architect": {
+            "main": [
+                [
+                    {
+                        "node": "3. Content Synthesizer",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "3. Content Synthesizer": {
+            "main": [
+                [
+                    {
+                        "node": "4. SEO Optimizer",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        }
     }
-  ],
-  "connections": {
-    "Start": {
-      "main": [
-        [
-          {
-            "node": "Fetch Supporting Posts",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Fetch Supporting Posts": {
-      "main": [
-        [
-          {
-            "node": "Item Lists (Split Out)",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Item Lists (Split Out)": {
-      "main": [
-        [
-          {
-            "node": "1. Content Summarizer",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "1. Content Summarizer": {
-      "main": [
-        [
-          {
-            "node": "Aggregate Summaries",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Aggregate Summaries": {
-      "main": [
-        [
-          {
-            "node": "2. Information Architect",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "2. Information Architect": {
-      "main": [
-        [
-          {
-            "node": "3. Content Synthesizer",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "3. Content Synthesizer": {
-      "main": [
-        [
-          {
-            "node": "4. SEO Optimizer",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    }
-  }
 }

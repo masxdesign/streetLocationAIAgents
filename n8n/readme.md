@@ -18,7 +18,7 @@ After importing, you will need to map a few custom variables and credentials to 
 
 1. **HTTP Request Node ("Fetch Supporting Posts"):**
    - Click this node and adjust your `X-API-Key` to be your real `YOUR_KEY`.
-   - The GraphQL request currently hardcodes `ids: [42, 43, 44]`. Depending on your environment, you may want to pass these dynamically from the starting Trigger.
+   - The GraphQL request uses `ids: [IDS HERE]`. You will need to replace `[IDS HERE]` dynamically from the starting Trigger or a previous node.
 2. **OpenAI Credentials (Agents 1-4):**
    - Click on each of the 4 nodes labeled **1. Content Summarizer**, **2. Information Architect**, **3. Content Synthesizer**, **4. SEO Optimizer** and select your authenticated OpenAI credentials.
 3. **Core Topic Variable (`pillar_topic`):**
