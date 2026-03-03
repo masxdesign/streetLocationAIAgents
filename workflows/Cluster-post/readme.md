@@ -12,6 +12,19 @@ The workflow uses four sequential AI agents:
 3. **The Content Synthesizer (Draft Writer):** Fills in the outline, writing short contextual summaries and injecting precise placeholder URLs for internal link building.
 4. **The SEO Optimizer & Editor:** Polishes the final draft, enforcing strict markdown output and validating that no link placeholders were lost.
 
+### Model Choice Recommendations (via OpenRouter)
+
+Since each agent specializes in a different task, you can mix and match models based on your budget and desired output quality. 
+
+| Agent Role | Cost-Effective Choice | Highest Premium Quality | The Best of Both Worlds |
+| :--- | :--- | :--- | :--- |
+| **1. Content Summarizer** | `meta-llama/llama-3-8b-instruct` | `anthropic/claude-3.5-sonnet` | `anthropic/claude-3-haiku` |
+| **2. Info Architect** | `google/gemini-flash-1.5` | `openai/gpt-4o` | `anthropic/claude-3.5-sonnet` |
+| **3. Content Synthesizer** | `meta-llama/llama-3-70b-instruct` | `anthropic/claude-3.5-sonnet` | `openai/gpt-4o-mini` |
+| **4. SEO Optimizer** | `google/gemini-flash-1.5` | `openai/gpt-4o` | `openai/gpt-4o-mini` |
+
+* **Why?** Summarization (Agent 1) is a simple task where fast, cheap models like Haiku or Llama excel. However, drafting beautiful prose (Agent 3) usually benefits from a heavy-hitter like Claude 3.5 Sonnet. Outline generation (Agent 2) and Markdown formatting enforcement (Agent 4) require good logic and instruction following, where OpenAI and Gemini models shine.
+
 ---
 
 ## Dynamic n8n Variables Schema
