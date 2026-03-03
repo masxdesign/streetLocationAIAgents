@@ -63,7 +63,7 @@
         {
             "parameters": {
                 "resource": "chat",
-                "model": "gpt-4",
+                "model": "openai/gpt-4o",
                 "messages": {
                     "messageValues": [
                         {
@@ -78,7 +78,7 @@
                 }
             },
             "name": "1. Content Summarizer",
-            "type": "n8n-nodes-base.openAi",
+            "type": "n8n-nodes-openrouter.openrouter",
             "typeVersion": 1,
             "position": [
                 800,
@@ -117,7 +117,7 @@
         {
             "parameters": {
                 "resource": "chat",
-                "model": "gpt-4",
+                "model": "openai/gpt-4o",
                 "messages": {
                     "messageValues": [
                         {
@@ -132,7 +132,7 @@
                 }
             },
             "name": "2. Information Architect",
-            "type": "n8n-nodes-base.openAi",
+            "type": "n8n-nodes-openrouter.openrouter",
             "typeVersion": 1,
             "position": [
                 1200,
@@ -142,7 +142,7 @@
         {
             "parameters": {
                 "resource": "chat",
-                "model": "gpt-4",
+                "model": "openai/gpt-4o",
                 "messages": {
                     "messageValues": [
                         {
@@ -157,7 +157,7 @@
                 }
             },
             "name": "3. Content Synthesizer",
-            "type": "n8n-nodes-base.openAi",
+            "type": "n8n-nodes-openrouter.openrouter",
             "typeVersion": 1,
             "position": [
                 1400,
@@ -167,7 +167,7 @@
         {
             "parameters": {
                 "resource": "chat",
-                "model": "gpt-4",
+                "model": "openai/gpt-4o",
                 "messages": {
                     "messageValues": [
                         {
@@ -182,7 +182,7 @@
                 }
             },
             "name": "4. SEO Optimizer",
-            "type": "n8n-nodes-base.openAi",
+            "type": "n8n-nodes-openrouter.openrouter",
             "typeVersion": 1,
             "position": [
                 1600,

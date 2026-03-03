@@ -19,8 +19,8 @@ After importing, you will need to map a few custom variables and credentials to 
 1. **HTTP Request Node ("Fetch Supporting Posts"):**
    - Click this node and adjust your `X-API-Key` to be your real `YOUR_KEY`.
    - The GraphQL request uses `ids: [IDS HERE]`. You will need to replace `[IDS HERE]` dynamically from the starting Trigger or a previous node.
-2. **OpenAI Credentials (Agents 1-4):**
-   - Click on each of the 4 nodes labeled **1. Content Summarizer**, **2. Information Architect**, **3. Content Synthesizer**, **4. SEO Optimizer** and select your authenticated OpenAI credentials.
+2. **OpenRouter Credentials (Agents 1-4):**
+   - Click on each of the 4 nodes labeled **1. Content Summarizer**, **2. Information Architect**, **3. Content Synthesizer**, **4. SEO Optimizer** and select your authenticated OpenRouter API credentials. You will need the `n8n-nodes-openrouter` community node installed in your n8n workspace to use this feature natively.
 3. **Core Topic Variable (`pillar_topic`):**
    - Currently, the generic `{{ $json.pillar_topic }}` variable used for the overarching theme is expected to be fed into the workflow at the start. You can achieve this by adding a "Set Variable" node right after the "Start" node, defining `pillar_topic` (e.g. `"The Ultimate Guide to Moving Properties"`).
 
