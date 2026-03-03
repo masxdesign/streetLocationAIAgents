@@ -1,6 +1,6 @@
 Write the full text for the Pillar Post based on this data:
 
-Core Topic: {{ json.new_title }}
+Core Topic: {{ json.pillar_topic }}
 
 Outline:
 {{ json.outline }}

@@ -1,6 +1,6 @@
 Please review, edit, and optimize the following Pillar Post draft. 
 
-Target Keyword: {{ json.new_title }}
+Target Keyword: {{ json.pillar_topic }}
 
 Required Link IDs:
 {{ json.supporting_posts }}
