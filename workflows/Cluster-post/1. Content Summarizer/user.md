@@ -1,8 +1,8 @@
 Please summarize the following supporting blog post.
 
-Title: [INSERT_SUPPORTING_POST_TITLE]
+Title: {{ json.new_title }}
 
 Full Article Text:
-[INSERT_SUPPORTING_POST_FULL_TEXT]
+{{ json.draft_markdown }}
 
 Provide the 2-3 sentence summary.

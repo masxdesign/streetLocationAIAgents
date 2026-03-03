@@ -1,6 +1,6 @@
-Please create a structural outline for a Pillar Post about our core topic: [INSERT_BROAD_CORE_TOPIC]
+Please create a structural outline for a Pillar Post about our core topic: {{ json.new_title }}
 
 Supporting posts to include:
-[INSERT_SUPPORTING_POSTS_DATA]
+{{ json.supporting_posts }}
 
 Generate the Markdown outline.

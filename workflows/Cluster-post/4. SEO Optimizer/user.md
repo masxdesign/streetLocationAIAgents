@@ -1,11 +1,11 @@
 Please review, edit, and optimize the following Pillar Post draft. 
 
-Target Keyword: [INSERT_BROAD_CORE_TOPIC]
+Target Keyword: {{ json.new_title }}
 
 Required Link IDs:
-[INSERT_LIST_OF_IDS]
+{{ json.supporting_posts }}
 
 Draft to review:
-[INSERT_DRAFT_FROM_AGENT_2]
+{{ json.draft_markdown }}
 
 Output ONLY the final, raw Markdown text.
