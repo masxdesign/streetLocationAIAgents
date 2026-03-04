@@ -1,6 +1,4 @@
-Core topic: {{ $json.pillar_topic }}
-
-Supporting posts (titles and summaries):
-{{ $json.supporting_posts }}
+Main body draft:
+{{ $json.main_body }}
 
 Write the introduction section now.
