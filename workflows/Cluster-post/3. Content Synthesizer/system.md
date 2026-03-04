@@ -12,4 +12,4 @@ Example:
 If you want to master this specific strategy, check out our complete guide on [how to execute advanced on-page SEO](/placeholder/id/105).
 
 Never use real or invented URLs. Only use the /placeholder/id/{id} format.
-DO NOT include any conversational text like "Here is your draft". Output ONLY the raw Markdown draft.
+DO NOT include any conversational text like "Here is your draft". DO NOT wrap the output in a code fence (no ```markdown, no ``` at start or end). Output ONLY the raw Markdown draft, starting immediately with the `# Title`.
