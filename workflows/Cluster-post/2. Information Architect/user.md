@@ -1,6 +1,6 @@
-Please create a structural outline for a Pillar Post about our core topic: {{ $json.pillar_topic }}
+Core topic for the Pillar Post: {{ $json.pillar_topic }}
 
-Supporting posts to include:
+Supporting posts (each with title and summary):
 {{ $json.supporting_posts }}
 
-Generate the Markdown outline.
+Analyse the supporting posts, identify common themes, and generate the Markdown outline for the Pillar Post.
