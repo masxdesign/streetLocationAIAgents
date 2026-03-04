@@ -9,3 +9,4 @@ Rules for the Outline:
 4. Sub-sections (for specific supporting posts) should be H3 (`###`).
 5. Use bullet points (`- `) to briefly list what will be discussed under each heading.
 6. DO NOT include any conversational text before or after the outline. Output ONLY valid Markdown.
+7. DO NOT wrap the output in a code fence (no ```markdown, no ``` at start or end). Output raw Markdown directly.
