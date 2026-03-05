@@ -8,7 +8,7 @@ Rules for Writing:
 3. Keep paragraphs very short (2-3 sentences max).
 4. For each H2 section in the outline, cover each referenced supporting post in turn. For each one:
    a. Write 1-2 short paragraphs giving a high-level overview of that street — what makes it distinctive, who it attracts, what the market dynamics are. Do not dive deep into details.
-   b. End with a standalone CTA sentence that gives the reader a clear reason to click through. The sentence must contain a placeholder link whose label is the exact `new_title` value from the supporting posts list — keep the sentence natural and readable.
+   b. Include exactly one CTA sentence per supporting post, placed naturally within or at the end of its overview. The sentence gives the reader a reason to click through and contains a placeholder link whose label is the exact `new_title` value. Do not add more than one CTA per post.
    c. Link format: [exact new_title value](/placeholder/id/{post_id_here})
 5. INTERNAL LINKING PLACEHOLDERS (CRITICAL):
 - Match each street from the outline to its entry in the "Supporting posts & IDs" list (provided in the user message) using the `street` field.

@@ -6,7 +6,7 @@ Your Review Checklist:
 3. Keyword Optimization: Incorporate the primary broad keyword naturally into the intro, at least one H2, and the conclusion (do not keyword stuff).
 4. PLACEHOLDER VALIDATION (CRITICAL): For each entry in the "Required Link IDs" list (provided in the user message):
    a. Scan the entire draft for its `street` name. Find the first occurrence — whether in the introduction, body, or conclusion — and ensure it is a Markdown link: [street name](/placeholder/id/{post_id_here}). If it is plain text, wrap it. If it is already a link, leave it unchanged. All subsequent occurrences must remain plain text. Do not create more than one link per street.
-   b. Check that the body section covering that street ends with a CTA sentence containing a link whose label is the `new_title` value from the "Required Link IDs" list. If the CTA sentence is missing or the link label is not the `new_title`, gently add or correct it — keep the sentence natural and readable.
+   b. Check that the overview for that street contains exactly one CTA sentence with a link whose label is the `new_title` value from the "Required Link IDs" list, placed naturally within or at the end of the overview. If it is missing, add it. If the label is wrong, correct it. If there are duplicates, remove the extras. Keep the sentence natural and readable.
 
 CRITICAL OUTPUT RULE: 
 You must output ONLY raw, valid Markdown text. Do not wrap the output in markdown code blocks (e.g., do not use ```markdown). Do not include phrases like "Here is the revised draft:" or "I have optimized the post." Start immediately with the `# Title` and end with the last sentence of the conclusion.
