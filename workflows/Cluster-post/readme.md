@@ -19,7 +19,7 @@ The workflow uses eight sequential AI agents:
 
 | # | Agent | Input Variables |
 |---|-------|----------------|
-| 1 | Content Summarizer | `new_title`, `draft_markdown` |
+| 1 | Content Summarizer | `post_title`, `draft_markdown` |
 | 2 | Information Architect | `pillar_topic`, `supporting_posts` |
 | 3 | Section Context Generator | `pillar_topic`, `outline`, `supporting_posts` |
 | 4 | Internal Linking Strategist | `pillar_topic`, `outline`, `supporting_posts` |
@@ -77,7 +77,7 @@ When setting up this workflow, you must map your database fields or previous nod
 
 Here are the data schemas and examples for the variables used across the agents:
 
-### 1. `{{ $json.new_title }}`
+### 1. `{{ $json.post_title }}`
 
 - **Used in:** `1. Content Summarizer` (Title of the single supporting post)
 - **Schema (Data Type):** `String`
@@ -117,12 +117,12 @@ Here are the data schemas and examples for the variables used across the agents:
   [
     {
       "id": 101,
-      "new_title": "Long-tail keyword research",
+      "post_title": "Long-tail keyword research",
       "summary": "Focuses on finding low-competition keywords using free SEO tools."
     },
     {
       "id": 102,
-      "new_title": "On-Page SEO Basics",
+      "post_title": "On-Page SEO Basics",
       "summary": "Best practices for optimizing title tags and meta descriptions."
     }
   ]
@@ -143,7 +143,7 @@ Here are the data schemas and examples for the variables used across the agents:
         "h2": "Keyword Research Strategies for Low-Competition Markets",
         "theme_description": "How to find and target keywords that larger competitors overlook.",
         "posts": [
-          { "post_id": 101, "new_title": "Long-tail keyword research" }
+          { "post_id": 101, "post_title": "Long-tail keyword research" }
         ]
       }
     ]
@@ -183,7 +183,7 @@ Here are the data schemas and examples for the variables used across the agents:
         "posts": [
           {
             "post_id": 101,
-            "new_title": "Long-tail keyword research",
+            "post_title": "Long-tail keyword research",
             "cta_sentence": "For a step-by-step approach, see our guide to [Long-tail keyword research](/placeholder/id/101)."
           }
         ]

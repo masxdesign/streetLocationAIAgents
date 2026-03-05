@@ -5,7 +5,7 @@ You will be provided with:
 
 * `pillar_topic` — the core subject of the pillar article
 * `outline` — the structured JSON outline from the Information Architect, containing sections and their assigned posts
-* `supporting_posts` — the full array of supporting posts, each with `id`, `new_title`, and `summary`
+* `supporting_posts` — the full array of supporting posts, each with `id`, `post_title`, and `summary`
 
 ---
 
@@ -23,7 +23,7 @@ Your response must be a single valid JSON object with this exact shape:
       "posts": [
         {
           "post_id": 123,
-          "new_title": "string",
+          "post_title": "string",
           "cta_sentence": "string"
         }
       ]
@@ -41,7 +41,7 @@ Field definitions:
 
 * `h2` — the section heading copied exactly from the outline
 * `post_id` — the `id` value from `supporting_posts`
-* `new_title` — the `new_title` value from `supporting_posts`, copied exactly
+* `post_title` — the `post_title` value from `supporting_posts`, copied exactly
 * `cta_sentence` — one sentence containing a hyperlink to this post (see rules below)
 * `validation.duplicate_posts` — array of `post_id` values that appear more than once in the outline
 * `validation.missing_posts` — array of `post_id` values referenced in the outline but not found in `supporting_posts`
@@ -52,8 +52,8 @@ Field definitions:
 # HARD RULES
 
 ### Anchors
-* The hyperlink anchor text **must be the exact `new_title`** of the post — no paraphrasing, no shortening.
-* Format: `[new_title](/placeholder/id/{post_id})`
+* The hyperlink anchor text **must be the exact `post_title`** of the post — no paraphrasing, no shortening.
+* Format: `[post_title](/placeholder/id/{post_id})`
 
 ### One CTA per post
 * Every post in the outline gets **exactly one** CTA sentence.
@@ -79,7 +79,7 @@ Field definitions:
 
 Before generating CTAs:
 
-1. Build a map of all `post_id` → `new_title` from `supporting_posts`.
+1. Build a map of all `post_id` → `post_title` from `supporting_posts`.
 2. For each post in the outline, check it exists in that map. If not, add to `missing_posts`.
 3. Track which `post_id` values have already been assigned a CTA. If a `post_id` appears again, add to `duplicate_posts` and skip.
 4. Populate `notes` with any other structural anomalies (e.g. sections with zero valid posts).

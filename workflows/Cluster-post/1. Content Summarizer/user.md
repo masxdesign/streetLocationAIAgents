@@ -1,6 +1,6 @@
 Please summarize the following supporting blog post.
 
-Title: {{ $json.new_title }}
+Title: {{ $json.post_title }}
 
 Full Article Text:
 {{ $json.draft_markdown }}

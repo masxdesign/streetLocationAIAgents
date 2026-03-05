@@ -34,11 +34,11 @@ Use the `link_plan` provided in the user message. For every post listed in `link
 | Check | Rule |
 |---|---|
 | CTA exists | Exactly one CTA sentence must exist in that post's overview |
-| Anchor text | Must be the exact `new_title` value |
-| URL format | Must be `[new_title](/placeholder/id/{post_id})` |
+| Anchor text | Must be the exact `post_title` value |
+| URL format | Must be `[post_title](/placeholder/id/{post_id})` |
 | Missing CTA | Insert it at the end of that post's overview |
 | Duplicate CTA | Keep only one |
-| Wrong anchor | Replace with the exact `new_title` |
+| Wrong anchor | Replace with the exact `post_title` |
 | Wrong URL | Correct to `/placeholder/id/{post_id}` |
 
 Hard rules:

@@ -7,7 +7,7 @@ You will be provided with:
 * a **supporting_posts array**, where each item contains:
 
   * `id`
-  * `new_title`
+  * `post_title`
   * `summary`
 
 Your job is to **analyse only the information contained within the supporting_posts array** and organise the pillar outline around the themes that emerge from those posts.
@@ -31,7 +31,7 @@ Your response must be a single valid JSON object with this exact shape:
       "h2": "string",
       "theme_description": "string",
       "posts": [
-        { "post_id": 123, "new_title": "string" }
+        { "post_id": 123, "post_title": "string" }
       ]
     }
   ]
