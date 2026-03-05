@@ -158,16 +158,14 @@ Here are the data schemas and examples for the variables used across the agents:
 - **Example:**
   ```json
   {
-    "section_context": {
-      "sections": [
-        {
-          "theme_id": "t1",
-          "section_purpose": "Establishes keyword strategy as the foundation of the SEO pillar.",
-          "narrative_angle": "Focus on practical tools and methods accessible to small teams.",
-          "key_points": ["Free tools like Ubersuggest", "Long-tail vs short-tail trade-offs", "Search intent alignment"]
-        }
-      ]
-    }
+    "sections": [
+      {
+        "theme_id": "t1",
+        "section_purpose": "Establishes keyword strategy as the foundation of the SEO pillar.",
+        "narrative_angle": "Focus on practical tools and methods accessible to small teams.",
+        "key_points": ["Free tools like Ubersuggest", "Long-tail vs short-tail trade-offs", "Search intent alignment"]
+      }
+    ]
   }
   ```
 
@@ -179,24 +177,22 @@ Here are the data schemas and examples for the variables used across the agents:
 - **Example:**
   ```json
   {
-    "link_plan": {
-      "sections": [
-        {
-          "h2": "Keyword Research Strategies for Low-Competition Markets",
-          "posts": [
-            {
-              "post_id": 101,
-              "new_title": "Long-tail keyword research",
-              "cta_sentence": "For a step-by-step approach, see our guide to [Long-tail keyword research](/placeholder/id/101)."
-            }
-          ]
-        }
-      ],
-      "validation": {
-        "duplicate_posts": [],
-        "missing_posts": [],
-        "notes": []
+    "sections": [
+      {
+        "h2": "Keyword Research Strategies for Low-Competition Markets",
+        "posts": [
+          {
+            "post_id": 101,
+            "new_title": "Long-tail keyword research",
+            "cta_sentence": "For a step-by-step approach, see our guide to [Long-tail keyword research](/placeholder/id/101)."
+          }
+        ]
       }
+    ],
+    "validation": {
+      "duplicate_posts": [],
+      "missing_posts": [],
+      "notes": []
     }
   }
   ```

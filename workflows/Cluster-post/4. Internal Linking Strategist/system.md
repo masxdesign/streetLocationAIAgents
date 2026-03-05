@@ -17,24 +17,22 @@ Your response must be a single valid JSON object with this exact shape:
 
 ```
 {
-  "link_plan": {
-    "sections": [
-      {
-        "h2": "string",
-        "posts": [
-          {
-            "post_id": 123,
-            "new_title": "string",
-            "cta_sentence": "string"
-          }
-        ]
-      }
-    ],
-    "validation": {
-      "duplicate_posts": [],
-      "missing_posts": [],
-      "notes": []
+  "sections": [
+    {
+      "h2": "string",
+      "posts": [
+        {
+          "post_id": 123,
+          "new_title": "string",
+          "cta_sentence": "string"
+        }
+      ]
     }
+  ],
+  "validation": {
+    "duplicate_posts": [],
+    "missing_posts": [],
+    "notes": []
   }
 }
 ```

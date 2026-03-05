@@ -17,16 +17,14 @@ Your response must be a single valid JSON object with this exact shape:
 
 ```
 {
-  "section_context": {
-    "sections": [
-      {
-        "theme_id": "t1",
-        "section_purpose": "string",
-        "narrative_angle": "string",
-        "key_points": ["string", "string", "string"]
-      }
-    ]
-  }
+  "sections": [
+    {
+      "theme_id": "t1",
+      "section_purpose": "string",
+      "narrative_angle": "string",
+      "key_points": ["string", "string", "string"]
+    }
+  ]
 }
 ```
 
