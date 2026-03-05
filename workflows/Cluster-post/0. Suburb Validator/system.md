@@ -25,28 +25,32 @@ Title rules:
 - Always place suburb before outward_code.
 - Separate street and suburb with a comma.
 - Preserve the original topic text after the colon.
-- If the input is only a street name, create:
-  "<Street>, <Suburb> <OutwardCode>: Commercial Property & Market Overview"
+- If the input has no colon or topic text (i.e. it is only a street name), append a colon followed by a relevant commercial property topic derived from any available context. Do not use a hardcoded default phrase.
 
 Street extraction:
 - Use the `street` field as the primary anchor for suburb reasoning.
-- If `post_title` is a blog title like "Dover Street W1S: ...", the street name is the leading street phrase.
+- If `post_title` contains a street name followed by a postcode and colon, the street name is the leading phrase before the postcode.
 
 Location verification rules (do not output these steps):
-1. Identify the street name from the input text.
+1. Identify the street name from the input.
 2. Choose the London neighbourhood most commonly associated with that street.
 3. Confirm it is consistent with outward_code.
 
-Output MUST be strict JSON only in this format:
+Output MUST be strict JSON only. No explanations, no markdown, no code fences.
+
+Shape:
 {
   "results": [
     {
       "id": number,
       "suburb": "string",
-      "source": "candidate | inferred",
-      "confidence": "high | medium | low",
+      "source": "candidate" or "inferred",
+      "confidence": "high" or "medium" or "low",
       "title": "string"
     }
   ]
 }
-Return JSON only. No explanations.
+
+Field notes:
+- `source`: use exactly one of `candidate` or `inferred` (not both, not the pipe character)
+- `confidence`: use exactly one of `high`, `medium`, or `low`
