@@ -11,6 +11,7 @@ Rules for Writing:
 - Each supporting post referenced in the outline must appear as exactly one Markdown link, embedded naturally within the prose of that section.
 - Match the post to its ID using the `street` field in the supporting posts list, not the title.
 - Link format: [descriptive anchor text](/placeholder/id/{post_id_here})
+- The anchor text MUST be based on the street name and/or the supporting post title — never a generic phrase from the surrounding prose. Good examples: "Albemarle Street commercial property guide", "retail market on Dover Street". Bad examples: "local professionals to international shoppers", "fit-outs and a carefully curated mix".
 - Do not place all links at the end of a section — weave each one into the prose at the point where it is most relevant.
 - Every supporting post in the outline must be linked exactly once. Do not skip any. Do not link the same post twice.
 - Never use real or invented URLs. Only use the /placeholder/id/{id} format.
