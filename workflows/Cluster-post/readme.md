@@ -1,13 +1,14 @@
 # Cluster Pillar Post Workflow
 
-This directory contains the system and user prompts to power an 8-agent n8n workflow designed to generate comprehensive, SEO-optimized "Cluster Pillar Posts".
+This directory contains the system and user prompts to power a 9-agent n8n workflow designed to generate comprehensive, SEO-optimized "Cluster Pillar Posts".
 
 ## Workflow Overview
 
 When building out a topic cluster strategy, the **Pillar Post** acts as the central hub that links out to deeper, more specific **Supporting Posts**. This workflow takes your existing supporting content and generates a cohesive, high-quality pillar post formatted in pure Markdown.
 
-The workflow uses eight sequential AI agents:
+The workflow uses nine sequential AI agents:
 
+0. **The Suburb Validator:** Validates and corrects London suburb assignments for each supporting post, and normalizes post titles to a consistent format.
 1. **The Content Summarizer:** Distills a full-length supporting post into a 2-3 sentence summary.
 2. **The Information Architect:** Analyses the summaries, identifies 3–6 analytical themes, and generates a structured JSON outline grouped by theme.
 3. **The Section Context Generator:** Reads the outline and produces a concise context brief per section (purpose, narrative angle, key points) to guide the writer.
@@ -19,6 +20,7 @@ The workflow uses eight sequential AI agents:
 
 | # | Agent | Input Variables |
 |---|-------|----------------|
+| 0 | Suburb Validator | `id`, `street`, `outward_code`, `candidate_suburbs` |
 | 1 | Content Summarizer | `post_title`, `draft_markdown` |
 | 2 | Information Architect | `pillar_topic`, `supporting_posts` |
 | 3 | Section Context Generator | `pillar_topic`, `outline`, `supporting_posts` |
@@ -38,6 +40,7 @@ Since each agent specializes in a different task, you can mix and match models b
 
 | # | Agent | DB Key | Recommended Model | Temperature | Max Tokens | Why |
 |---|-------|--------|-------------------|-------------|------------|-----|
+| 0 | Suburb Validator | `suburb-validator` | `openai/gpt-4.1-mini` | `0.2` | `500` | Factual lookup and title normalization. Low temp for accuracy. |
 | 1 | Content Summarizer | `content-summarizer` | `openai/gpt-4.1-mini` | `0.3` | `150` | Factual extraction, very short output. Low temp keeps it grounded. |
 | 2 | Information Architect | `information-architect` | `openai/gpt-4.1-mini` | `0.4` | `800` | JSON outline with analytical grouping. Slight creativity for theme naming, but must stay structured. |
 | 3 | Section Context Generator | `section-context-generator` | `openai/gpt-4.1-mini` | `0.3` | `600` | Extraction task — reads summaries, outputs brief JSON. Deterministic preferred. |
