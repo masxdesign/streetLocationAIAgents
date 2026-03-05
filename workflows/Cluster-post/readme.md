@@ -24,8 +24,8 @@ The workflow uses eight sequential AI agents:
 | 3 | Section Context Generator | `pillar_topic`, `outline`, `supporting_posts` |
 | 4 | Internal Linking Strategist | `pillar_topic`, `outline`, `supporting_posts` |
 | 5 | Main Body Writer | `link_plan`, `section_context` |
-| 6 | Introduction Writer | `main_body` |
-| 7 | Conclusion Writer | `main_body` |
+| 6 | Introduction Writer | `pillar_topic`, `main_body` |
+| 7 | Conclusion Writer | `pillar_topic`, `main_body` |
 | 8 | SEO Optimizer | `pillar_topic`, `supporting_posts`, `outline`, `section_context`, `link_plan`, `draft_markdown` |
 
 > **Assembly note:** A Merge/Set node between agents 7 and 8 should concatenate the outputs into a single `draft_markdown` string in the format: `# {title}\n\n{intro}\n\n{body}\n\n{conclusion}`. It must also forward the upstream planning artifacts (`outline`, `section_context`, `link_plan`, `supporting_posts`, `pillar_topic`) so the SEO Optimizer can validate against them.
@@ -89,7 +89,7 @@ Here are the data schemas and examples for the variables used across the agents:
 
 ### 2. `{{ $json.pillar_topic }}`
 
-- **Used in:** `2. Information Architect`, `3. Section Context Generator`, `4. Internal Linking Strategist`, `8. SEO Optimizer`
+- **Used in:** `2. Information Architect`, `3. Section Context Generator`, `4. Internal Linking Strategist`, `6. Introduction Writer`, `7. Conclusion Writer`, `8. SEO Optimizer`
 - **Schema (Data Type):** `String`
 - **Description:** Represents the overarching focus keyword of the pillar post.
 - **Example:**
