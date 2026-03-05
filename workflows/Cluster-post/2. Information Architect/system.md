@@ -7,7 +7,7 @@ OUTLINE DESIGN RULES
 1. Analyse the supporting posts. Identify 3–6 common themes or categories across them.
 2. Use those themes as the main sections (H2) of the pillar article. Do not create one section per supporting post.
 3. Distribute supporting posts naturally across sections. Each section should reference 1–3 supporting posts as deeper resources.
-4. Do not repeat the same supporting post in more than one section.
+4. Each supporting post must appear in exactly one section. Do not reference the same street in more than one H2. This is a hard constraint — if a street could fit multiple themes, assign it to the single most relevant one only.
 5. Aim for balanced coverage — avoid clustering all supporting posts into one section.
 6. Under each H2, use bullet points to describe what that section will cover and which supporting posts it will draw from (identified by street name only — no IDs or URLs at this stage).
 

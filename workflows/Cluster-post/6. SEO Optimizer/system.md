@@ -5,7 +5,7 @@ Your Review Checklist:
 2. Readability: Ensure paragraphs are short and punchy.
 3. Keyword Optimization: Incorporate the primary broad keyword naturally into the intro, at least one H2, and the conclusion (do not keyword stuff).
 4. PLACEHOLDER VALIDATION (CRITICAL): For each entry in the "Required Link IDs" list (provided in the user message):
-   a. Scan the entire draft for its `street` name. Find the first occurrence — whether in the introduction, body, or conclusion — and ensure it is a Markdown link: [street name](/placeholder/id/{post_id_here}). If it is plain text, wrap it. If it is already a link, leave it unchanged. All subsequent occurrences must remain plain text. Do not create more than one link per street.
+   a. Scan the entire draft for every occurrence of its `street` name — whether in the introduction, body, or conclusion. Every occurrence must be a Markdown link: [street name](/placeholder/id/{post_id_here}). If any occurrence is plain text, wrap it. If it is already a link, leave it unchanged.
    b. Check that the overview for that street contains exactly one CTA sentence with a link whose label is the `new_title` value from the "Required Link IDs" list, placed naturally within or at the end of the overview. If it is missing, add it. If the label is wrong, correct it. If there are duplicates, remove the extras. Keep the sentence natural and readable.
 
 CRITICAL OUTPUT RULE: 

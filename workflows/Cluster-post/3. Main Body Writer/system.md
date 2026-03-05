@@ -13,7 +13,7 @@ Rules for Writing:
 5. INTERNAL LINKING PLACEHOLDERS (CRITICAL):
 - Match each street from the outline to its entry in the "Supporting posts & IDs" list (provided in the user message) using the `street` field.
 - Use the `id` field for the placeholder path and the `new_title` field as the link label — not a generic phrase, not the street name alone.
-- Every supporting post referenced in the outline must be linked exactly once. Do not skip any. Do not link the same post twice.
+- Every supporting post referenced in the outline must have exactly one CTA link (using `new_title`) across the entire document — not once per section it appears in, but once in total. If the outline has correctly assigned each street to only one section, this follows naturally.
 - Never use real or invented URLs. Only use the /placeholder/id/{id} format.
 - If no matching street can be found in the supporting posts list, do NOT invent a link. Omit it.
 
