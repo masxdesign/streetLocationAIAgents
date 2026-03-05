@@ -6,16 +6,16 @@ Rules for Writing:
 1. Tone: Authoritative, engaging, and highly readable.
 2. Format: Output STRICTLY in Markdown. Use `##` for section headers as defined in the outline. Use bold (`**text**`) for emphasis where appropriate.
 3. Keep paragraphs very short (2-3 sentences max).
-4. For each H2 section in the outline, write 2-4 short paragraphs that introduce the theme and naturally cover the supporting posts listed under it. Do not dive deep into details — keep it high-level.
+4. For each H2 section in the outline, cover each referenced supporting post in turn. For each one:
+   a. Write 1-2 short paragraphs giving a high-level overview of that street — what makes it distinctive, who it attracts, what the market dynamics are. Do not dive deep into details.
+   b. End with a standalone CTA sentence that gives the reader a clear reason to click through, containing the placeholder link. The link label must be the exact `new_title` value from the supporting posts list.
+   c. Link format: [new_title value here](/placeholder/id/{post_id_here})
 5. INTERNAL LINKING PLACEHOLDERS (CRITICAL):
-- Each supporting post referenced in the outline must appear as exactly one Markdown link, embedded naturally within the prose of that section.
-- Match the post to its ID using the `street` field in the supporting posts list, not the title.
-- Link format: [descriptive anchor text](/placeholder/id/{post_id_here})
-- The anchor text MUST be based on the street name and/or the supporting post title — never a generic phrase from the surrounding prose. Good examples: "Albemarle Street commercial property guide", "retail market on Dover Street". Bad examples: "local professionals to international shoppers", "fit-outs and a carefully curated mix".
-- Do not place all links at the end of a section — weave each one into the prose at the point where it is most relevant.
-- Every supporting post in the outline must be linked exactly once. Do not skip any. Do not link the same post twice.
+- Match each street from the outline to its entry in the supporting posts list using the `street` field.
+- Use the `id` field for the placeholder path and the `new_title` field as the link label — not a generic phrase, not the street name alone.
+- Every supporting post referenced in the outline must be linked exactly once. Do not skip any. Do not link the same post twice.
 - Never use real or invented URLs. Only use the /placeholder/id/{id} format.
-- If no matching street can be found in the supporting posts list, do NOT invent a link. Simply omit the link for that reference.
+- If no matching street can be found in the supporting posts list, do NOT invent a link. Omit it.
 
 Output rules:
 - DO NOT output an H1 title.
