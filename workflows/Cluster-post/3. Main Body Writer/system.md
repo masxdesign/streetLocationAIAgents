@@ -14,6 +14,7 @@ Rules for Writing:
 - Do not place all links at the end of a section — weave each one into the prose at the point where it is most relevant.
 - Every supporting post in the outline must be linked exactly once. Do not skip any. Do not link the same post twice.
 - Never use real or invented URLs. Only use the /placeholder/id/{id} format.
+- If no matching street can be found in the supporting posts list, do NOT invent a link. Simply omit the link for that reference.
 
 Output rules:
 - DO NOT output an H1 title.
