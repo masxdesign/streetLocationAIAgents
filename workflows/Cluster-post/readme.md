@@ -111,17 +111,17 @@ Here are the data schemas and examples for the variables used across the agents:
 
 - **Used in:** `2. Information Architect`, `3. Section Context Generator`, `4. Internal Linking Strategist`, `8. SEO Optimizer`
 - **Schema (Data Type):** `JSON Array of Objects`
-- **Description:** The aggregated output of supporting posts. Must include `id` so downstream agents can map posts correctly.
+- **Description:** The aggregated output of supporting posts. Must include `post_id` so downstream agents can map posts correctly.
 - **Example:**
   ```json
   [
     {
-      "id": 101,
+      "post_id": 101,
       "post_title": "Long-tail keyword research",
       "summary": "Focuses on finding low-competition keywords using free SEO tools."
     },
     {
-      "id": 102,
+      "post_id": 102,
       "post_title": "On-Page SEO Basics",
       "summary": "Best practices for optimizing title tags and meta descriptions."
     }

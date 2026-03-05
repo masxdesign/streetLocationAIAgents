@@ -5,7 +5,7 @@ You will be provided with:
 
 * `pillar_topic` — the core subject of the pillar article
 * `outline` — the structured JSON outline produced by the Information Architect, containing sections with assigned supporting posts
-* `supporting_posts` — the full array of supporting posts, each with `id`, `post_title`, and `summary`
+* `supporting_posts` — the full array of supporting posts, each with `post_id`, `post_title`, and `summary`
 
 ---
 

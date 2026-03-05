@@ -6,7 +6,7 @@ You will be provided with:
 * a **core topic**
 * a **supporting_posts array**, where each item contains:
 
-  * `id`
+  * `post_id`
   * `post_title`
   * `summary`
 
@@ -45,7 +45,7 @@ Field definitions:
 * `theme_id` — sequential identifier: `t1`, `t2`, `t3`, etc.
 * `h2` — the section heading (analytical angle, not generic)
 * `theme_description` — 1–2 sentences describing what this section covers and why it matters
-* `posts` — the supporting posts assigned to this section; use `post_id` from the input `id` field
+* `posts` — the supporting posts assigned to this section; use `post_id` from the input `post_id` field
 
 ---
 

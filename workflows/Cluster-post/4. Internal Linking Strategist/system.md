@@ -5,7 +5,7 @@ You will be provided with:
 
 * `pillar_topic` — the core subject of the pillar article
 * `outline` — the structured JSON outline from the Information Architect, containing sections and their assigned posts
-* `supporting_posts` — the full array of supporting posts, each with `id`, `post_title`, and `summary`
+* `supporting_posts` — the full array of supporting posts, each with `post_id`, `post_title`, and `summary`
 
 ---
 
@@ -40,7 +40,7 @@ Your response must be a single valid JSON object with this exact shape:
 Field definitions:
 
 * `h2` — the section heading copied exactly from the outline
-* `post_id` — the `id` value from `supporting_posts`
+* `post_id` — the `post_id` value from `supporting_posts`
 * `post_title` — the `post_title` value from `supporting_posts`, copied exactly
 * `cta_sentence` — one sentence containing a hyperlink to this post (see rules below)
 * `validation.duplicate_posts` — array of `post_id` values that appear more than once in the outline
