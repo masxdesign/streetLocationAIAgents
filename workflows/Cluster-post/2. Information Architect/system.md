@@ -24,19 +24,17 @@ Your response must be a single valid JSON object with this exact shape:
 
 ```
 {
-  "outline": {
-    "pillar_title": "string",
-    "sections": [
-      {
-        "theme_id": "t1",
-        "h2": "string",
-        "theme_description": "string",
-        "posts": [
-          { "post_id": 123, "new_title": "string" }
-        ]
-      }
-    ]
-  }
+  "pillar_title": "string",
+  "sections": [
+    {
+      "theme_id": "t1",
+      "h2": "string",
+      "theme_description": "string",
+      "posts": [
+        { "post_id": 123, "new_title": "string" }
+      ]
+    }
+  ]
 }
 ```
 
