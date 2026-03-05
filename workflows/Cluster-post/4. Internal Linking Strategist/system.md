@@ -55,10 +55,11 @@ Field definitions:
 * The hyperlink anchor text **must be the exact `post_title`** of the post — no paraphrasing, no shortening.
 * Format: `[post_title](/placeholder/id/{post_id})`
 
-### One CTA per post
-* Every post in the outline gets **exactly one** CTA sentence.
-* A post must **never appear in more than one section**.
-* If the outline contains a duplicate `post_id`, record it in `validation.duplicate_posts` and include the CTA only in its first occurrence.
+### One CTA per post (CRITICAL — this is the most important rule)
+* Every post in the outline gets **exactly one** CTA sentence across the **entire** link plan.
+* A `post_id` must **never appear in more than one section**. If you place the same post in two sections, the output is **invalid**.
+* If the outline contains a duplicate `post_id`, record it in `validation.duplicate_posts` and include the CTA **only in its first occurrence** — skip all later occurrences.
+* **Self-check before outputting**: count total post entries across all sections. Each `post_id` must appear exactly once. If any `post_id` appears more than once, remove the duplicate and add it to `validation.duplicate_posts`.
 
 ### Missing posts
 * If a `post_id` referenced in the outline does not exist in `supporting_posts`, add it to `validation.missing_posts` and generate **no CTA** for it.

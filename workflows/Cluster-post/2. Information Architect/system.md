@@ -25,6 +25,10 @@ Your response must be a single valid JSON object with this exact shape:
 ```
 {
   "pillar_title": "string",
+  "post_assignment_map": {
+    "123": "t1",
+    "456": "t2"
+  },
   "sections": [
     {
       "theme_id": "t1",
@@ -41,11 +45,12 @@ Your response must be a single valid JSON object with this exact shape:
 Field definitions:
 
 * `pillar_title` — the H1 title for the pillar article
+* `post_assignment_map` — an object mapping every `post_id` (as string key) to the single `theme_id` it is assigned to. **Build this map first**, then populate the sections from it. Every post_id must appear exactly once as a key.
 * `sections` — array of 3–6 thematic sections
 * `theme_id` — sequential identifier: `t1`, `t2`, `t3`, etc.
 * `h2` — the section heading (analytical angle, not generic)
 * `theme_description` — 1–2 sentences describing what this section covers and why it matters
-* `posts` — the supporting posts assigned to this section; use `post_id` from the input `post_id` field
+* `posts` — the supporting posts assigned to this section; use `post_id` from the input `post_id` field. Must match `post_assignment_map` exactly.
 
 ---
 
@@ -88,9 +93,12 @@ Each H2 must reflect a theme that **clearly emerges from the supporting posts th
 
 ---
 
-# POST ASSIGNMENT RULES
+# POST ASSIGNMENT RULES (CRITICAL — violations invalidate the entire output)
 
-* Each supporting post must appear in **exactly one section**.
-* Do **not repeat a supporting post in multiple sections**.
-* If a supporting post could fit multiple themes, assign it to **the single most relevant theme only**.
-* Aim for **balanced distribution** of posts across sections — avoid placing most posts in a single section.
+**Zero-duplicate constraint — this is the single most important rule in the prompt.**
+
+1. Before writing `sections`, build `post_assignment_map`: assign every `post_id` to **exactly one** `theme_id`.
+2. A `post_id` must appear in **exactly one** section's `posts` array. If a post_id appears in two or more sections the output is **invalid**.
+3. If a supporting post could fit multiple themes, assign it to **the single most relevant theme only** — do not duplicate it.
+4. After generating sections, **self-check**: count total post entries across all sections. This count **must equal** the number of keys in `post_assignment_map`. If it does not, you have duplicated a post — fix it before outputting.
+5. Aim for **balanced distribution** of posts across sections — avoid placing most posts in a single section.
