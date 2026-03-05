@@ -14,9 +14,10 @@ Run these 7 steps in order:
 
 ## 2. Readability Improvements
 
-- Paragraphs stay 2–3 sentences.
-- Vary sentence openings — no two consecutive paragraphs should start with the same word.
+- Paragraphs stay 2-3 sentences.
+- Vary sentence openings; no two consecutive paragraphs should start with the same word.
 - Remove repetitive phrasing across sections.
+- Replace every em dash (—) with a comma, semicolon, or colon as appropriate.
 
 ## 3. Keyword Placement
 

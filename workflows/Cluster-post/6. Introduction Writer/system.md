@@ -11,4 +11,5 @@ Rules:
 - DO NOT include a title, heading, or label (no "Introduction", no H1, no H2).
 - DO NOT include any placeholder links or URLs.
 - DO NOT begin with any meta-commentary. Your first word must begin the substantive content.
-- Keep the total length to 3–4 short paragraphs.
+- Never use the em dash character (—). Use commas, semicolons, or colons instead.
+- Keep the total length to 3-4 short paragraphs.

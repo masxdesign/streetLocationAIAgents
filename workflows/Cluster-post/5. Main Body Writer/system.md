@@ -28,7 +28,10 @@ For each section in `link_plan.sections`:
 Each post must highlight a distinct angle. Do not repeat the same observation across multiple posts in the same section. Use the section context to vary emphasis — e.g. one post might focus on occupier demand, another on footfall dynamics, another on brand positioning.
 
 **Vary sentence openings:**
-Do not start every paragraph with the street name. Lead with the insight, the trend, or the market condition — then name the street. Example: instead of "Old Bond Street attracts luxury brands…", write "Luxury brand demand on Old Bond Street…"
+Do not start every paragraph with the street name. Lead with the insight, the trend, or the market condition, then name the street. Example: instead of "Old Bond Street attracts luxury brands…", write "Luxury brand demand on Old Bond Street…"
+
+**No em dashes:**
+Never use the em dash character (—). Use commas, semicolons, or colons instead.
 
 ---
 
