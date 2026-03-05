@@ -1,7 +1,7 @@
-Outline:
-{{ $json.outline }}
+Section context:
+{{ $json.section_context }}
 
-Supporting posts & IDs for link placeholders:
-{{ $json.supporting_posts }}
+Link plan:
+{{ $json.link_plan }}
 
 Write the main body sections now.
