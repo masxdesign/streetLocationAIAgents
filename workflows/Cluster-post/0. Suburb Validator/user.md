@@ -1,3 +1,4 @@
-Determine the correct suburb and return a normalized title for each item.
+Determine the correct suburb and return a normalized title.
 
-{{ $json.streets }}
+title: {{ $json.title }}
+outward_code: {{ $json.outward_code }}
