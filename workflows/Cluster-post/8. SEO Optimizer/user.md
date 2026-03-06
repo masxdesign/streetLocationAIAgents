@@ -14,6 +14,9 @@ Section Context:
 Link Plan:
 {{ $json.link_plan }}
 
+Client instructions (preserve these in the final output):
+{{ $json.custom_instructions }}
+
 Draft to review:
 {{ $json.draft_markdown }}
 

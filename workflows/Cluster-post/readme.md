@@ -25,10 +25,10 @@ The workflow uses nine sequential AI agents:
 | 2 | Information Architect | `pillar_topic`, `supporting_posts` |
 | 3 | Section Context Generator | `pillar_topic`, `outline`, `supporting_posts` |
 | 4 | Internal Linking Strategist | `pillar_topic`, `outline`, `supporting_posts` |
-| 5 | Main Body Writer | `link_plan`, `section_context` |
+| 5 | Main Body Writer | `link_plan`, `section_context`, `custom_instructions` |
 | 6 | Introduction Writer | `pillar_topic`, `main_body` |
 | 7 | Conclusion Writer | `pillar_topic`, `main_body` |
-| 8 | SEO Optimizer | `pillar_topic`, `supporting_posts`, `outline`, `section_context`, `link_plan`, `draft_markdown` |
+| 8 | SEO Optimizer | `pillar_topic`, `supporting_posts`, `outline`, `section_context`, `link_plan`, `draft_markdown`, `custom_instructions` |
 
 > **Assembly note:** A Merge/Set node between agents 7 and 8 should concatenate the outputs into a single `draft_markdown` string in the format: `# {title}\n\n{intro}\n\n{body}\n\n{conclusion}`. It must also forward the upstream planning artifacts (`outline`, `section_context`, `link_plan`, `supporting_posts`, `pillar_topic`) so the SEO Optimizer can validate against them.
 
