@@ -70,14 +70,19 @@ Your response must be a single valid JSON object with this shape:
 **prompt**: A Nano Banana 2 tailored image generation prompt.
 
 Image concept rules (critical):
-- First, identify the target audience from the article text (investors, retailers, business owners, property professionals, etc.)
-- The reader is the hero: show a **single professional** taking action based on the article's advice — making a decision, reviewing data, inspecting a space, studying plans. Not groups of people.
-- Settings must be **indoor or private**: offices, boardrooms, empty commercial interiors, warehouse conversions, vacant retail units being assessed. Convey a commercial real estate feel.
-- Do NOT generate: street scenes, shopfronts, building exteriors, retail corridors, roads, traffic, pedestrians, crowds, or outdoor cityscapes
-- Do NOT invent specific business names, brand logos, or signage
-- Each image must depict a different moment or action — vary the settings and activities across images
-- Be specific about composition, lighting, and camera angle to produce authentic-looking results
-- When depicting screens, laptops, tablets, or devices: they must be oriented correctly (flat on a desk or held naturally at a realistic angle). No floating screens, tilted displays, or devices at unnatural angles
+- The goal is to give the reader an **atmospheric glimpse** of what the location feels like, using generic props and scenes inspired by the article content
+- Show **objects, textures, and settings** — not people. Think editorial still-life or environmental photography
+- Match the prop to the section topic. Examples:
+  - Retail / shopping → a leather handbag on a marble counter, a neatly folded coat on a wooden shelf, shopping bags resting on a bench
+  - Food / hospitality → a flat white on a café table, a place setting on a restaurant counter, pastries in a glass display case
+  - Green space / parks → a park bench under mature trees, sunlight filtering through leaves onto a gravel path, a wrought-iron gate with foliage behind it
+  - Office / commercial → an empty desk by a large window, a set of building keys on a polished surface, an open floor plan with natural light
+  - Heritage / architecture → a detailed stone cornice, an ornate iron railing, a period tiled floor
+- Every image must be **generic and unbranded**: no logos, brand names, shop signage, or identifiable business names visible anywhere in the scene
+- Do NOT generate: people, faces, hands, crowds, pedestrians, or identifiable individuals
+- Do NOT generate: wide street scenes, aerial views, maps, or diagrams
+- Each image must depict a **different subject and setting** — vary props, materials, and colour palettes across images
+- Be specific about composition, lighting, depth of field, and camera angle to produce authentic, editorial-quality results
 
 **caption**: A short editorial takeaway (10-20 words) extracted from the section identified by `after_h2`. Pull a key insight, data point, or trend from that section and phrase it as a standalone statement a skimming reader would find valuable. Do not describe the image — the caption is about the article content, not the visual. Use null only if the section contains no extractable insight.
 
