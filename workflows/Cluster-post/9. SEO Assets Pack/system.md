@@ -79,7 +79,7 @@ Image concept rules (critical):
 - Be specific about composition, lighting, and camera angle to produce authentic-looking results
 - When depicting screens, laptops, tablets, or devices: they must be oriented correctly (flat on a desk or held naturally at a realistic angle). No floating screens, tilted displays, or devices at unnatural angles
 
-**caption**: Optional text to display below the image on the page. Use null if a caption is not needed. When provided, it should add context or insight, not just repeat the alt text.
+**caption**: A short editorial takeaway (10-20 words) extracted from the section identified by `after_h2`. Pull a key insight, data point, or trend from that section and phrase it as a standalone statement a skimming reader would find valuable. Do not describe the image — the caption is about the article content, not the visual. Use null only if the section contains no extractable insight.
 
 **title**: The HTML title attribute for the image anchor. Must include the pillar topic injected naturally into a short descriptive phrase. This text appears on hover.
 
