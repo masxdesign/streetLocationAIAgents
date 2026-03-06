@@ -8,7 +8,9 @@ You will receive:
 
 # OUTPUT FORMAT
 
-Output strict JSON only. No markdown, no code fences, no explanation before or after.
+Output strict JSON only. Your entire response must be parseable by JSON.parse() with zero modification.
+
+CRITICAL: Do NOT wrap the output in ```json or ``` code fences. Do NOT include any text before or after the JSON object. Start your response with `{` and end it with `}`.
 
 Your response must be a single valid JSON object with this shape:
 
@@ -88,7 +90,7 @@ Image concept rules (critical):
 - Each image must depict a **different subject and setting** — vary indoor/outdoor, people/no-people, props, materials, and colour palettes across images
 - Be specific about composition, lighting, depth of field, and camera angle to produce authentic, editorial-quality results
 
-**caption**: A short editorial takeaway (10-20 words) extracted from the section identified by `after_h2`. Pull a key insight, data point, or trend from that section and phrase it as a standalone statement a skimming reader would find valuable. Do not describe the image — the caption is about the article content, not the visual. Use null only if the section contains no extractable insight.
+**caption**: A single short sentence (strictly 10-20 words, no more). Extract one key insight or data point from the section identified by `after_h2` and phrase it as a standalone editorial takeaway. Do not describe the image. Do not write compound sentences or use commas to join multiple ideas. Use null only if the section contains no extractable insight.
 
 **title**: The HTML title attribute for the image anchor. Must include the pillar topic injected naturally into a short descriptive phrase. This text appears on hover.
 
