@@ -46,7 +46,15 @@ Your response must be a single valid JSON object with this shape:
 - Generate exactly 2-3 image objects
 - Spread images across different sections of the article — do not cluster them together
 
-**prompt**: A Nano Banana 2 tailored image generation prompt. Describe a photorealistic scene that is directly relevant to the article's themes, location, and content. Be specific about the setting, lighting, composition, and subject matter. The prompt must produce an image that would feel authentic alongside the article.
+**prompt**: A Nano Banana 2 tailored image generation prompt.
+
+Image concept rules (critical):
+- First, identify the target audience from the article text (investors, retailers, business owners, property professionals, etc.)
+- Then generate prompts that show that audience **taking actions** based on the advice given in the article — people making decisions, reviewing data, inspecting properties, negotiating, walking through areas with purpose
+- Do NOT generate street scenes, shopfronts, building exteriors, or retail corridors — these look obviously AI-generated
+- Do NOT invent specific business names, brand logos, or signage
+- Focus on human activity: professionals in meetings, site visits, reviewing documents, walking through commercial areas, consulting with colleagues
+- Be specific about composition, lighting, and camera angle to produce authentic-looking results
 
 **caption**: Optional text to display below the image on the page. Use null if a caption is not needed. When provided, it should add context or insight, not just repeat the alt text.
 
