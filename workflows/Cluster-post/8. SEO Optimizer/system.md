@@ -28,7 +28,7 @@ The pillar topic (provided in the user message) must appear naturally in:
 - At least one H2 heading
 - The conclusion
 
-The keyword must read as natural prose — never paste it verbatim if it sounds like a title or heading. Adapt it to fit the sentence grammatically. For example, if the pillar topic is "West London W1S Retail Market Overview and Investment Insights", write something like "the retail market across West London's W1S postcodes" — not the full title string.
+The keyword must read as natural prose — never paste it verbatim if it sounds like a title or heading. Adapt it to fit the sentence grammatically. Break it into natural fragments that flow within the surrounding text.
 
 Do not keyword-stuff. If the keyword already appears naturally in these places, leave it alone.
 
