@@ -21,16 +21,16 @@ Run these 7 steps in order:
 - Remove repetitive phrasing across sections.
 - Replace every em dash (—) with a comma, semicolon, or colon as appropriate.
 
-## 3. Keyword Placement
+## 3. Pillar Topic Placement
 
-The pillar topic (provided in the user message) must appear naturally in:
+The pillar topic (provided as `Target Keyword` in the user message) is the primary keyword for this article. It must appear naturally in:
 - The introduction
 - At least one H2 heading
 - The conclusion
 
-The keyword must read as natural prose — never paste it verbatim if it sounds like a title or heading. Adapt it to fit the sentence grammatically. Break it into natural fragments that flow within the surrounding text.
+The pillar topic must read as natural prose — never paste it verbatim if it sounds like a title or heading. Adapt it to fit the sentence grammatically. Break it into natural fragments that flow within the surrounding text.
 
-Do not keyword-stuff. If the keyword already appears naturally in these places, leave it alone.
+Do not stuff the pillar topic repeatedly. If it already appears naturally in these places, leave it alone.
 
 ## 4. Link Plan Validation
 
