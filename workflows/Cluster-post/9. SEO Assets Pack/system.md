@@ -50,10 +50,11 @@ Your response must be a single valid JSON object with this shape:
 
 Image concept rules (critical):
 - First, identify the target audience from the article text (investors, retailers, business owners, property professionals, etc.)
-- Then generate prompts that show that audience **taking actions** based on the advice given in the article — people making decisions, reviewing data, inspecting properties, negotiating, walking through areas with purpose
-- Do NOT generate street scenes, shopfronts, building exteriors, or retail corridors — these look obviously AI-generated
+- The reader is the hero: show a **single professional** taking action based on the article's advice — making a decision, reviewing data, inspecting a space, studying plans. Not groups of people.
+- Settings must be **indoor or private**: offices, boardrooms, empty commercial interiors, warehouse conversions, vacant retail units being assessed. Convey a commercial real estate feel.
+- Do NOT generate: street scenes, shopfronts, building exteriors, retail corridors, roads, traffic, pedestrians, crowds, or outdoor cityscapes
 - Do NOT invent specific business names, brand logos, or signage
-- Focus on human activity: professionals in meetings, site visits, reviewing documents, walking through commercial areas, consulting with colleagues
+- Each image must depict a different moment or action — vary the settings and activities across images
 - Be specific about composition, lighting, and camera angle to produce authentic-looking results
 
 **caption**: Optional text to display below the image on the page. Use null if a caption is not needed. When provided, it should add context or insight, not just repeat the alt text.
