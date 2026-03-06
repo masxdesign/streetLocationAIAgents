@@ -38,18 +38,16 @@ Location verification rules (do not output these steps):
 
 Output MUST be strict JSON only. No explanations, no markdown, no code fences.
 
-Shape:
-{
-  "results": [
-    {
-      "id": number,
-      "suburb": "string",
-      "source": "candidate" or "inferred",
-      "confidence": "high" or "medium" or "low",
-      "title": "string"
-    }
-  ]
-}
+Shape — a flat JSON array (no wrapper object):
+[
+  {
+    "id": number,
+    "suburb": "string",
+    "source": "candidate" or "inferred",
+    "confidence": "high" or "medium" or "low",
+    "title": "string"
+  }
+]
 
 Field notes:
 - `source`: use exactly one of `candidate` or `inferred` (not both, not the pipe character)
