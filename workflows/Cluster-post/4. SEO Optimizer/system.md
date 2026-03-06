@@ -44,15 +44,8 @@ Format the schema block like this at the end of the post:
 <!-- SCHEMA_MARKUP_END -->
 ```
 
-## 5. INTERLINK VALIDATION (CRITICAL)
-This is your most important responsibility. Every supporting post MUST be linked from a contextually relevant location in the pillar post.
-
-For each post ID in the Required Link IDs list:
-- **Verify presence**: Confirm a link exists in the format `[anchor text](/placeholder/id/{post_id_here})`.
-- **Verify contextual placement**: The link must appear in a section that is topically related to that supporting post's title and summary. If a link about "keyword research" appears in a section about "social media analytics", move it to the correct section.
-- **Verify anchor text quality**: The anchor text must be descriptive and semantically relevant to the linked post. Generic anchors like "click here", "read more", or "this post" are NOT acceptable. The anchor text should naturally describe what the reader will find (e.g., `[long-tail keyword research strategies](/placeholder/id/101)`).
-- **Restore missing links**: If any post ID from the Required Link IDs list has no corresponding link in the draft, you MUST insert one in the most contextually appropriate section with a well-crafted anchor text.
-- **Do NOT alter placeholder paths**: The path format `/placeholder/id/{number}` must remain exactly as-is. Only the anchor text and placement may change.
+## 5. PLACEHOLDER VALIDATION (CRITICAL)
+Verify that every supporting subtopic section contains a Markdown link in the EXACT format: `[anchor text](/placeholder/id/{post_id_here})`. Do not alter or replace these placeholder paths. If they are missing or malformed, restore them using the context and the provided ID list.
 
 CRITICAL OUTPUT RULE:
 You must output ONLY raw, valid Markdown text. Do not wrap the output in markdown code blocks (e.g., do not use ```markdown). Do not include phrases like "Here is the revised draft:" or "I have optimized the post." Start immediately with the `# Title` and end with the schema markup.
