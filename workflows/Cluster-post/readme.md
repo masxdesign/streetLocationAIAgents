@@ -1,12 +1,12 @@
 # Cluster Pillar Post Workflow
 
-This directory contains the system and user prompts to power a 9-agent n8n workflow designed to generate comprehensive, SEO-optimized "Cluster Pillar Posts".
+This directory contains the system and user prompts to power a 10-agent n8n workflow designed to generate comprehensive, SEO-optimized "Cluster Pillar Posts".
 
 ## Workflow Overview
 
 When building out a topic cluster strategy, the **Pillar Post** acts as the central hub that links out to deeper, more specific **Supporting Posts**. This workflow takes your existing supporting content and generates a cohesive, high-quality pillar post formatted in pure Markdown.
 
-The workflow uses nine sequential AI agents:
+The workflow uses ten sequential AI agents:
 
 0. **The Suburb Validator:** Validates and corrects London suburb assignments for each supporting post, and normalizes post titles to a consistent format.
 1. **The Content Summarizer:** Distills a full-length supporting post into a 2-3 sentence summary.
@@ -17,6 +17,7 @@ The workflow uses nine sequential AI agents:
 6. **The Introduction Writer:** Reads the main body draft and writes a compelling introduction that sets up the article naturally.
 7. **The Conclusion Writer:** Reads the main body draft and writes a closing section that synthesises the key themes.
 8. **The SEO Optimizer & Editor:** Receives the fully assembled draft plus upstream planning artifacts (`outline`, `section_context`, `link_plan`, `supporting_posts`). Runs a 7-step pipeline: Markdown validation, readability, keyword placement, link plan validation, section coherence checks, topical gap detection, and a final consistency pass.
+9. **The SEO Assets Pack:** Reads the final article and generates a JSON pack containing page title, meta description, and 2-3 image assets with Nano Banana 2 generation prompts, captions, title attributes, alt text, and placement references.
 
 | # | Agent | Input Variables |
 |---|-------|----------------|
@@ -29,6 +30,7 @@ The workflow uses nine sequential AI agents:
 | 6 | Introduction Writer | `pillar_topic`, `main_body` |
 | 7 | Conclusion Writer | `pillar_topic`, `main_body` |
 | 8 | SEO Optimizer | `pillar_topic`, `supporting_posts`, `outline`, `section_context`, `link_plan`, `draft_markdown`, `custom_instructions` |
+| 9 | SEO Assets Pack | `pillar_topic`, `final_markdown` |
 
 > **Assembly note:** A Merge/Set node between agents 7 and 8 should concatenate the outputs into a single `draft_markdown` string in the format: `# {title}\n\n{intro}\n\n{body}\n\n{conclusion}`. It must also forward the upstream planning artifacts (`outline`, `section_context`, `link_plan`, `supporting_posts`, `pillar_topic`) so the SEO Optimizer can validate against them.
 
@@ -49,6 +51,7 @@ Since each agent specializes in a different task, you can mix and match models b
 | 6 | Introduction Writer | `introduction-writer` | `openai/gpt-4.1-mini` | `0.6` | `400` | Short creative output. Moderate temp for a natural, engaging opening. |
 | 7 | Conclusion Writer | `conclusion-writer` | `openai/gpt-4.1-mini` | `0.6` | `350` | Short, synthesised from body content. Same logic as Introduction. |
 | 8 | **SEO Optimizer** | `seo-optimizer` | **`openai/gpt-4.1`** | `0.2` | `4000` | Must reproduce the full draft with surgical edits — low temp for precision and consistency. High ceiling to avoid truncation. |
+| 9 | SEO Assets Pack | `seo-assets-pack` | `openai/gpt-4.1-mini` | `0.4` | `800` | Structured JSON extraction with slight creativity for image prompts. |
 
 **Temperature guidance:**
 - `0.2–0.4` — structured/extraction tasks (JSON, validation, summarisation)
