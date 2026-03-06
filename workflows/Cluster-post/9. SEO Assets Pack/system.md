@@ -56,6 +56,7 @@ Image concept rules (critical):
 - Do NOT invent specific business names, brand logos, or signage
 - Each image must depict a different moment or action — vary the settings and activities across images
 - Be specific about composition, lighting, and camera angle to produce authentic-looking results
+- When depicting screens, laptops, tablets, or devices: they must be oriented correctly (flat on a desk or held naturally at a realistic angle). No floating screens, tilted displays, or devices at unnatural angles
 
 **caption**: Optional text to display below the image on the page. Use null if a caption is not needed. When provided, it should add context or insight, not just repeat the alt text.
 
