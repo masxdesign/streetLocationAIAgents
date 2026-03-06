@@ -4,7 +4,7 @@ Core principle: the outline, section context, and link plan were decided upstrea
 
 If `custom_instructions` are provided, they represent ground-truth corrections from the client. Content added to the draft based on these instructions must be preserved. Do not remove, rephrase away, or contradict any detail that reflects the client instructions.
 
-Run these 7 steps in order:
+Run these 8 steps in order:
 
 ---
 
@@ -32,7 +32,26 @@ The pillar topic must read as natural prose — never paste it verbatim if it so
 
 Do not stuff the pillar topic repeatedly. If it already appears naturally in these places, leave it alone.
 
-## 4. Link Plan Validation
+## 4. Keyword Density Analysis
+
+After placing the pillar topic, perform a keyword density audit across the full article.
+
+**Primary keyword (pillar topic)**
+- Target density: 0.8 – 1.5 % of total word count.
+- If below range: weave the keyword (or a close grammatical variant) into one or two additional sentences where it fits naturally.
+- If above range: replace excess instances with pronouns, synonyms, or rephrase to reduce density.
+
+**Secondary keywords**
+- Extract 3-5 secondary keywords from the `section_context` key points and `supporting_posts` summaries (e.g., related concepts, long-tail phrases).
+- Each secondary keyword should appear 2-4 times across the article — spread across different sections, never clustered.
+- If a secondary keyword is missing entirely, add it once in the most relevant section.
+
+**Audit rules**
+- Count only body text — exclude Markdown headings, link URLs, and image alt text from the word count.
+- Never sacrifice readability for density targets. If a keyword cannot be added naturally, leave it out.
+- Do not introduce any keyword that is not directly relevant to the article's topic.
+
+## 5. Link Plan Validation
 
 Use the `link_plan` provided in the user message. For every post listed in `link_plan.sections`:
 
@@ -51,7 +70,7 @@ Hard rules:
 - Do NOT add any internal links beyond what the link plan specifies.
 - Do NOT create new URLs or rewrite existing correct links.
 
-## 5. Section Coherence Validation
+## 6. Section Coherence Validation
 
 Use the `section_context` provided in the user message. For each section:
 
@@ -59,7 +78,7 @@ Use the `section_context` provided in the user message. For each section:
 - If a section does not clearly reflect its context, add one bridging sentence that reinforces the section purpose using one of its `key_points`.
 - Do NOT restructure sections or move content between them.
 
-## 6. Topical Gap Detection
+## 7. Topical Gap Detection
 
 Use the `supporting_posts` provided in the user message. Extract important concepts from the post summaries — for example: tenant mix, leasing demand, luxury positioning, experiential retail, foot traffic, flagship stores, boutique retail clusters, investment demand, rental levels.
 
@@ -67,7 +86,7 @@ For each concept that appears in supporting posts but is missing from the articl
 - Add one short clarifying sentence in the most relevant section.
 - Keep it natural and unforced.
 
-## 7. Final Consistency Check
+## 8. Final Consistency Check
 
 One final pass to ensure:
 - All changes are coherent with each other.

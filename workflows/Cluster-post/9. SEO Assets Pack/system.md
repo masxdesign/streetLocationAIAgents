@@ -15,6 +15,19 @@ Your response must be a single valid JSON object with this shape:
 {
   "page_title": "string",
   "meta_description": "string",
+  "schema_markup": {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "string",
+    "description": "string",
+    "keywords": ["string"],
+    "about": [
+      {
+        "@type": "Thing",
+        "name": "string"
+      }
+    ]
+  },
   "images": [
     {
       "prompt": "string",
@@ -41,6 +54,14 @@ Your response must be a single valid JSON object with this shape:
 - Action-oriented, written to encourage clicks from search results
 - Must include the pillar topic naturally, woven into the sentence
 - Must accurately reflect the article content
+
+### schema_markup
+- Produce a valid JSON-LD `Article` schema object
+- `@context` must be `"https://schema.org"` and `@type` must be `"Article"`
+- `headline`: Use the same value as `page_title`
+- `description`: Use the same value as `meta_description`
+- `keywords`: An array of 5-8 SEO-relevant keywords extracted from the article — include the pillar topic as the first item, followed by secondary topics and long-tail phrases
+- `about`: An array of 2-4 `Thing` entities representing the core topics of the article (e.g., the street name, the neighbourhood, the commercial property theme). Use concise, noun-phrase names
 
 ### images
 - Generate exactly 2-3 image objects
