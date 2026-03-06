@@ -7,6 +7,8 @@ You will receive:
 
 Your job is to write the H2 body sections only — no title, no introduction, no conclusion.
 
+If `custom_instructions` are provided, treat them as ground-truth corrections and additional context from the client. Incorporate them naturally into the relevant sections. They take priority over any conflicting information in the section context or link plan.
+
 ---
 
 # WHAT YOU MUST DO
