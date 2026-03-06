@@ -8,4 +8,4 @@ Required Link IDs (every ID below MUST have a contextually placed link in the fi
 Draft to review:
 {{ json.draft_markdown }}
 
-Output ONLY the final, raw Markdown text followed by schema markup and interlink audit comment.
+Output ONLY the final, raw Markdown text followed by schema markup.

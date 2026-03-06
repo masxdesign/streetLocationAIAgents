@@ -54,10 +54,5 @@ For each post ID in the Required Link IDs list:
 - **Restore missing links**: If any post ID from the Required Link IDs list has no corresponding link in the draft, you MUST insert one in the most contextually appropriate section with a well-crafted anchor text.
 - **Do NOT alter placeholder paths**: The path format `/placeholder/id/{number}` must remain exactly as-is. Only the anchor text and placement may change.
 
-After validation, append an HTML comment at the very end (after schema markup) listing all linked IDs for downstream verification:
-```
-<!-- INTERLINK_AUDIT: [101, 102, 103] -->
-```
-
 CRITICAL OUTPUT RULE:
-You must output ONLY raw, valid Markdown text. Do not wrap the output in markdown code blocks (e.g., do not use ```markdown). Do not include phrases like "Here is the revised draft:" or "I have optimized the post." Start immediately with the `# Title` and end with the schema markup and interlink audit comment.
+You must output ONLY raw, valid Markdown text. Do not wrap the output in markdown code blocks (e.g., do not use ```markdown). Do not include phrases like "Here is the revised draft:" or "I have optimized the post." Start immediately with the `# Title` and end with the schema markup.
