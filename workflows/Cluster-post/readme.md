@@ -20,7 +20,7 @@ The workflow uses nine sequential AI agents:
 
 | # | Agent | Input Variables |
 |---|-------|----------------|
-| 0 | Suburb Validator | `id`, `post_title`, `street`, `outward_code`, `candidate_suburbs` |
+| 0 | Suburb Validator | `id`, `title`, `outward_code` |
 | 1 | Content Summarizer | `post_title`, `draft_markdown` |
 | 2 | Information Architect | `pillar_topic`, `supporting_posts` |
 | 3 | Section Context Generator | `pillar_topic`, `outline`, `supporting_posts` |
