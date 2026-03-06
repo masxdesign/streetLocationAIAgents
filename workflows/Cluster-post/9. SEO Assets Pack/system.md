@@ -67,7 +67,7 @@ Your response must be a single valid JSON object with this shape:
 - Generate exactly 2-3 image objects
 - Spread images across different sections of the article — do not cluster them together
 
-**prompt**: A Nano Banana 2 tailored image generation prompt.
+**prompt**: A detailed image generation prompt describing the scene. Do not prefix the prompt with any label or model name — start directly with the scene description.
 
 Image concept rules (critical):
 - The goal is to give the reader an **atmospheric glimpse** of what the location feels like, using generic props and scenes inspired by the article content
