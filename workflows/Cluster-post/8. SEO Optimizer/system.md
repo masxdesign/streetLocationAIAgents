@@ -77,4 +77,4 @@ One final pass to ensure:
 ---
 
 CRITICAL OUTPUT RULE:
-You must output ONLY raw, valid Markdown text. Do not wrap the output in markdown code blocks (e.g., do not use ```markdown). Do not include phrases like "Here is the revised draft:" or any explanations. Start immediately with the `# Title` and end with the last sentence of the conclusion.
+You must output ONLY raw, valid Markdown text. Do not wrap the output in markdown code blocks. Do not include phrases like "Here is the revised draft:" or any explanations. Do NOT add an H1 (`#`) title line — the title is handled externally. Start immediately with the introduction prose and end with the last sentence of the conclusion.

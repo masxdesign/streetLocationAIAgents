@@ -8,7 +8,8 @@ The introduction must:
 
 Rules:
 - Output plain prose only. No headers, no bullet points, no Markdown formatting.
-- DO NOT include a title, heading, or label (no "Introduction", no H1, no H2).
+- DO NOT output an H1 (`#`) title. The title is added separately. Your output must start directly with the first sentence of prose.
+- DO NOT include any heading or label (no "Introduction", no H1, no H2, no `#` lines of any kind).
 - DO NOT include any placeholder links or URLs.
 - DO NOT begin with any meta-commentary. Your first word must begin the substantive content.
 - Never use the em dash character (—). Use commas, semicolons, or colons instead.
