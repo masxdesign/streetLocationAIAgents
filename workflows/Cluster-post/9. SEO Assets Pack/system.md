@@ -70,18 +70,22 @@ Your response must be a single valid JSON object with this shape:
 **prompt**: A detailed image generation prompt describing the scene. Do not prefix the prompt with any label or model name — start directly with the scene description.
 
 Image concept rules (critical):
-- The goal is to give the reader an **atmospheric glimpse** of what the location feels like, using generic props and scenes inspired by the article content
-- Show **objects, textures, and settings** — not people. Think editorial still-life or environmental photography
-- Match the prop to the section topic. Examples:
-  - Retail / shopping → a leather handbag on a marble counter, a neatly folded coat on a wooden shelf, shopping bags resting on a bench
-  - Food / hospitality → a flat white on a café table, a place setting on a restaurant counter, pastries in a glass display case
-  - Green space / parks → a park bench under mature trees, sunlight filtering through leaves onto a gravel path, a wrought-iron gate with foliage behind it
-  - Office / commercial → an empty desk by a large window, a set of building keys on a polished surface, an open floor plan with natural light
+- The goal is to give the reader an **atmospheric glimpse** of what the location feels like, using generic props, scenes, and candid moments inspired by the article content
+- **Mix indoor and outdoor settings** across the image set — do not make all images indoor or all outdoor. Aim for at least one of each
+- **Mix people and no-people shots** across the image set — at least one image should include a person and at least one should be a pure object/setting shot
+- When including people: show them naturally and candidly (walking, browsing, sitting at a café, carrying a shopping bag). Always from behind, side-on, or at a distance — never facing the camera. No identifiable faces
+- When not including people: think editorial still-life or environmental photography — objects, textures, and settings
+- Match the subject to the section topic. Examples:
+  - Retail / shopping → a leather handbag on a marble counter, a person carrying shopping bags down a tree-lined pavement, a neatly folded coat on a wooden shelf
+  - Food / hospitality → a flat white on a café table, someone seated at a terrace table seen from behind, pastries in a glass display case
+  - Green space / parks → a park bench under mature trees, a person walking a dog along a gravel path, sunlight filtering through leaves
+  - Office / commercial → an empty desk by a large window, a set of building keys on a polished surface, someone in a suit walking through a lobby
   - Heritage / architecture → a detailed stone cornice, an ornate iron railing, a period tiled floor
+  - Streetscape → a cobbled side street with planters, a bicycle leaning against railings, morning light falling on a row of awnings
 - Every image must be **generic and unbranded**: no logos, brand names, shop signage, or identifiable business names visible anywhere in the scene
-- Do NOT generate: people, faces, hands, crowds, pedestrians, or identifiable individuals
-- Do NOT generate: wide street scenes, aerial views, maps, or diagrams
-- Each image must depict a **different subject and setting** — vary props, materials, and colour palettes across images
+- Do NOT generate: identifiable faces, direct eye contact, posed portraits, or large crowds
+- Do NOT generate: aerial views, maps, or diagrams
+- Each image must depict a **different subject and setting** — vary indoor/outdoor, people/no-people, props, materials, and colour palettes across images
 - Be specific about composition, lighting, depth of field, and camera angle to produce authentic, editorial-quality results
 
 **caption**: A short editorial takeaway (10-20 words) extracted from the section identified by `after_h2`. Pull a key insight, data point, or trend from that section and phrase it as a standalone statement a skimming reader would find valuable. Do not describe the image — the caption is about the article content, not the visual. Use null only if the section contains no extractable insight.
