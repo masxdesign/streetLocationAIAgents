@@ -6,10 +6,12 @@ You will receive:
 
 Tasks:
 
-1) Determine the correct London suburb or neighbourhood for the given outward_code.
+1) Determine **all** recognised London neighbourhoods that fall within the given outward_code.
    - Use widely recognized London neighbourhood names.
-   - The suburb must be consistent with the outward_code.
-   - If the outward_code spans more than one recognised neighbourhood, concatenate them with ` & ` (e.g. two overlapping areas become `Area1 & Area2`).
+   - Every neighbourhood must be consistent with the outward_code.
+   - Most outward codes cover **multiple** neighbourhoods — you must list all of them, not just the most prominent one.
+   - Concatenate all matching neighbourhoods with ` & ` in the `suburb` field (e.g. if three neighbourhoods overlap, output `Area1 & Area2 & Area3`).
+   - Do not pick only one when multiple are valid.
 
 2) Normalize the title so it correctly reflects the suburb and outward_code.
    - If the title already contains the correct suburb for the outward_code, keep it.
