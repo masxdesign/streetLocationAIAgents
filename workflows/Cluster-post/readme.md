@@ -10,7 +10,7 @@ The workflow uses four sequential AI agents:
 1. **The Content Summarizer:** Distills a full-length supporting post into a 2-3 sentence summary.
 2. **The Information Architect (Outline Planner):** Generates a logical Markdown outline grouping the supporting post concepts.
 3. **The Content Synthesizer (Draft Writer):** Fills in the outline, writing short contextual summaries and injecting precise placeholder URLs for internal link building.
-4. **The SEO Optimizer & Editor:** Polishes the final draft, enforcing strict markdown output and validating that no link placeholders were lost.
+4. **The SEO Optimizer & Editor:** Performs deep SEO optimization including keyword density analysis (1–2% target with LSI keyword identification), generates structured data (Article, FAQ, and BreadcrumbList JSON-LD schema markup), and runs a critical interlink validation pass that verifies every supporting post is linked from a contextually relevant section with descriptive anchor text.
 
 ### Model Choice Recommendations (via OpenRouter)
 
@@ -23,7 +23,7 @@ Since each agent specializes in a different task, you can mix and match models b
 | **3. Content Synthesizer** | `meta-llama/llama-3-70b-instruct` | `anthropic/claude-3.5-sonnet` | `openai/gpt-4o-mini` |
 | **4. SEO Optimizer** | `google/gemini-flash-1.5` | `openai/gpt-4o` | `openai/gpt-4o-mini` |
 
-* **Why?** Summarization (Agent 1) is a simple task where fast, cheap models like Haiku or Llama excel. However, drafting beautiful prose (Agent 3) usually benefits from a heavy-hitter like Claude 3.5 Sonnet. Outline generation (Agent 2) and Markdown formatting enforcement (Agent 4) require good logic and instruction following, where OpenAI and Gemini models shine.
+* **Why?** Summarization (Agent 1) is a simple task where fast, cheap models like Haiku or Llama excel. However, drafting beautiful prose (Agent 3) usually benefits from a heavy-hitter like Claude 3.5 Sonnet. Outline generation (Agent 2) requires good logic and instruction following. The SEO Optimizer (Agent 4) now performs deep SEO work (keyword density analysis, schema markup generation, and semantic interlink validation), so it benefits from a strong reasoning model like GPT-4o or Claude 3.5 Sonnet.
 
 ---
 
