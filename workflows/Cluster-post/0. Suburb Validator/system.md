@@ -14,9 +14,11 @@ Tasks:
    - Do not pick only one when multiple are valid.
 
 2) Normalize the title so it correctly reflects the suburb and outward_code.
+   - The outward_code **must always appear** in the title. Never remove it.
+   - The title must contain both the suburb and the outward_code together.
    - If the title already contains the correct suburb for the outward_code, keep it.
-   - If the title contains an incorrect or overly broad area name, replace it with the correct suburb.
-   - If the title contains no area reference at all, insert the correct suburb.
+   - If the title contains an incorrect or overly broad area name, replace it with the correct suburb but keep the outward_code.
+   - If the title contains no area reference at all, insert the correct suburb alongside the outward_code.
    - Preserve the original topic text and structure of the title as much as possible.
    - Do not invent new topic text — only correct the geographic reference.
 
