@@ -126,7 +126,7 @@
                         },
                         {
                             "role": "user",
-                            "content": "=Please create a structural outline for a Pillar Post about our core topic: {{ $json.pillar_topic }}\n\nSupporting posts to include:\n{{ JSON.stringify($json.data) }}\n\nGenerate the Markdown outline."
+                            "content": "=Please create a structural outline for a Pillar Post about our core topic: {{ $json.pillar_topic }}\n\nSupporting posts to include:\n{{ $json.stringify($json.data) }}\n\nGenerate the Markdown outline."
                         }
                     ]
                 }
@@ -151,7 +151,7 @@
                         },
                         {
                             "role": "user",
-                            "content": "=Write the full text for the Pillar Post based on this data:\n\nCore Topic: {{ $('2. Information Architect').first().json.pillar_topic }}\n\nOutline:\n{{ $json.message.content }}\n\nSupporting topics & IDs for link placeholders:\n{{ JSON.stringify($('Aggregate Summaries').first().json.data) }}\n\nWrite the complete draft in plain Markdown format now."
+                            "content": "=Write the full text for the Pillar Post based on this data:\n\nCore Topic: {{ $('2. Information Architect').first().json.pillar_topic }}\n\nOutline:\n{{ $json.message.content }}\n\nSupporting topics & IDs for link placeholders:\n{{ $json.stringify($('Aggregate Summaries').first().json.data) }}\n\nWrite the complete draft in plain Markdown format now."
                         }
                     ]
                 }
@@ -176,7 +176,7 @@
                         },
                         {
                             "role": "user",
-                            "content": "=Please review, edit, and optimize the following Pillar Post draft. \n\nTarget Keyword: {{ $('2. Information Architect').first().json.pillar_topic }}\n\nRequired Link IDs:\n{{ JSON.stringify($('Aggregate Summaries').first().json.data) }}\n\nDraft to review:\n{{ $json.message.content }}\n\nOutput ONLY the final, raw Markdown text."
+                            "content": "=Please review, edit, and optimize the following Pillar Post draft. \n\nTarget Keyword: {{ $('2. Information Architect').first().json.pillar_topic }}\n\nRequired Link IDs:\n{{ $json.stringify($('Aggregate Summaries').first().json.data) }}\n\nDraft to review:\n{{ $json.message.content }}\n\nOutput ONLY the final, raw Markdown text."
                         }
                     ]
                 }
