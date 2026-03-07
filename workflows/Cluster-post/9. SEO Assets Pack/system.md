@@ -69,26 +69,25 @@ Your response must be a single valid JSON object with this shape:
 - Generate exactly 2-3 image objects
 - Spread images across different sections of the article — do not cluster them together
 
-**prompt**: A detailed image generation prompt describing the scene. Do not prefix the prompt with any label or model name — start directly with the scene description.
+**prompt**: A detailed image generation prompt. Describe the scene (subject, setting, composition, lighting, camera angle, depth of field) and include any necessary constraints or negative instructions directly in the prompt so the image generator can follow them.
 
-Image concept rules (critical):
-- The goal is to give the reader an **atmospheric glimpse** of what the location feels like, using generic props, scenes, and candid moments inspired by the article content
-- **Mix indoor and outdoor settings** across the image set — do not make all images indoor or all outdoor. Aim for at least one of each
-- **Mix people and no-people shots** across the image set — at least one image should include a person and at least one should be a pure object/setting shot
-- When including people: show them naturally and candidly (walking, browsing, sitting at a café, carrying a shopping bag). Always from behind, side-on, or at a distance — never facing the camera. No identifiable faces
-- When not including people: think editorial still-life or environmental photography — objects, textures, and settings
+Image concept rules (apply these AND include relevant constraints in the prompt):
+- Give the reader an atmospheric glimpse of what the location feels like, using props, scenes, and candid moments inspired by the article content
+- **Mix indoor and outdoor settings** across the image set — at least one of each
+- **Mix people and no-people shots** across the image set — at least one of each
+- People should appear naturally and candidly (walking, browsing, sitting at a café, carrying a shopping bag), seen from behind, side-on, or at a distance
+- No-people shots should be editorial still-life or environmental photography — objects, textures, and settings
 - Match the subject to the section topic. Examples:
-  - Retail / shopping → a leather handbag on a marble counter, a person carrying shopping bags down a tree-lined pavement, a neatly folded coat on a wooden shelf
+  - Retail / shopping → a leather handbag on a marble counter, a woman carrying shopping bags down a tree-lined pavement, a neatly folded coat on a wooden shelf
   - Food / hospitality → a flat white on a café table, someone seated at a terrace table seen from behind, pastries in a glass display case
   - Green space / parks → a park bench under mature trees, a person walking a dog along a gravel path, sunlight filtering through leaves
-  - Office / commercial → an empty desk by a large window, a set of building keys on a polished surface, someone in a suit walking through a lobby
+  - Office / commercial → an empty desk by a large window, a set of building keys on a polished surface, a man in a suit walking through a lobby
   - Heritage / architecture → a detailed stone cornice, an ornate iron railing, a period tiled floor
   - Streetscape → a cobbled side street with planters, a bicycle leaning against railings, morning light falling on a row of awnings
-- Every image must be **generic and unbranded**: no logos, brand names, shop signage, or identifiable business names visible anywhere in the scene
-- Do NOT generate: identifiable faces, direct eye contact, posed portraits, or large crowds
-- Do NOT generate: aerial views, maps, or diagrams
-- Each image must depict a **different subject and setting** — vary indoor/outdoor, people/no-people, props, materials, and colour palettes across images
-- Be specific about composition, lighting, depth of field, and camera angle to produce authentic, editorial-quality results
+- No logos, brand names, shop signage, or identifiable business names in the scene
+- No identifiable faces, direct eye contact, posed portraits, or large crowds
+- No aerial views, maps, or diagrams
+- Each image must depict a different subject and setting — vary indoor/outdoor, people/no-people, props, materials, and colour palettes
 
 **caption**: A single short sentence (strictly 10-20 words, no more). Extract one key insight or data point from the section identified by `after_h2` and phrase it as a standalone editorial takeaway. Do not describe the image. Do not write compound sentences or use commas to join multiple ideas. Use null only if the section contains no extractable insight.
 
