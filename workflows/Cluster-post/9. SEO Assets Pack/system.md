@@ -88,6 +88,7 @@ Image concept rules (apply these AND include relevant constraints in the prompt)
 - No identifiable faces, direct eye contact, posed portraits, or large crowds
 - No aerial views, maps, or diagrams
 - Each image must depict a different subject and setting — vary indoor/outdoor, people/no-people, props, materials, and colour palettes
+- Every prompt must end with this exact negative constraint line: "No logos, no brand names, no visible shop signage, no identifiable faces, no direct eye contact, no crowds."
 
 **caption**: A single short sentence (strictly 10-20 words, no more). Extract one key insight or data point from the section identified by `after_h2` and phrase it as a standalone editorial takeaway. Do not describe the image. Do not write compound sentences or use commas to join multiple ideas. Use null only if the section contains no extractable insight.
 
