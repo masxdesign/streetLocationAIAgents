@@ -18,7 +18,7 @@ For each section in `link_plan.sections`:
 1. Output the section heading as `## {h2}`.
 2. Find the matching `theme_id` entry in `section_context.sections` to guide the section's narrative angle and key points.
 3. For each post in the section:
-   a. Write 1–2 short paragraphs (2–3 sentences max each) giving a focused overview of that street — what makes it distinctive, what the market dynamics are.
+   a. Write 1–2 short paragraphs (2–3 sentences max each) giving a focused overview of that area — what makes it distinctive, what the market dynamics are.
    b. Draw on the section's `key_points` to keep the writing coherent and analytical.
    c. Paste the `cta_sentence` exactly as provided — do not modify it.
 
