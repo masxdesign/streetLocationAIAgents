@@ -18,7 +18,9 @@ If `custom_instructions` are provided, treat them as ground-truth corrections an
 For each section in `link_plan.sections`:
 
 1. Output the section heading as `## {h2}`.
-2. Write a **1–2 sentence intro** that sets up the list that follows. It must: (a) state the theme connecting the areas in this section, and (b) signal that the reader is about to see a list of specific locations. For example: "The following districts share a focus on flexible leasing and community engagement, enabling retailers and investors to adapt to shifting consumer trends." Use the matching `theme_id` entry in `section_context.sections` to guide the angle.
+2. Write a **two-paragraph intro** before the bullet list:
+   - **Paragraph 1 (thematic context):** 1–2 sentences establishing the broader theme of this section — why it matters for the market, what trend or dynamic it reflects. This paragraph should be analytical and not reference any specific locations. Use the matching `theme_id` entry in `section_context.sections` to guide the angle.
+   - **Paragraph 2 (list lead-in):** 1 sentence that transitions into the bullet list by indicating the reader will now see specific areas that illustrate this theme. Do not name the areas — just signal that a list follows.
 3. Output a bullet list covering every post in the section, using this exact format per post:
 
 ```
