@@ -79,7 +79,7 @@ Hard rules:
 Use the `section_context` provided in the user message. For each section:
 
 - Verify the content reflects its intended `narrative_angle`.
-- If a section does not clearly reflect its context, add one bridging sentence that reinforces the section purpose using one of its `key_points`.
+- If a section does not clearly reflect its context, weave a clarifying phrase into the section's **intro sentence** or into an existing bullet description. Do NOT add a new standalone paragraph.
 - Do NOT restructure sections or move content between them.
 
 ## 7. Topical Gap Detection
@@ -87,8 +87,10 @@ Use the `section_context` provided in the user message. For each section:
 Use the `supporting_posts` provided in the user message. Extract important concepts from the post summaries — for example: tenant mix, leasing demand, luxury positioning, experiential retail, foot traffic, flagship stores, boutique retail clusters, investment demand, rental levels.
 
 For each concept that appears in supporting posts but is missing from the article:
-- Add one short clarifying sentence in the most relevant section.
-- Keep it natural and unforced.
+- Weave it into an existing bullet description or section intro where it fits naturally.
+- Do NOT add new standalone paragraphs or wrap-up text after the bullet list.
+
+**CRITICAL STRUCTURE RULE:** The body sections use a bullet-list index format. Each section consists of: one H2 heading, one short intro (1-2 sentences), and a bullet list. Do NOT append prose paragraphs, summaries, or wrap-up text after any section's bullet list. The section ends with the last bullet item's CTA link.
 
 ## 8. Final Consistency Check
 
