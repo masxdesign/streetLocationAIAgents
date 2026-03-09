@@ -41,6 +41,9 @@ Each bullet must highlight a **distinct angle**. Do not repeat the same observat
 **No filler or wrap-up paragraphs:**
 Do not write a summary or wrap-up paragraph at the end of any section. The section ends after the last bullet item.
 
+**No imperative openers in section intros:**
+Do not begin section intro sentences with imperative verbs aimed at the reader (e.g. "Explore", "Discover", "Examine", "Find out", "Learn"). Write declarative prose instead. For example, use "West London's prestigious districts combine..." rather than "Discover how West London's prestigious districts combine...".
+
 **No em dashes:**
 Never use the em dash character (—). Use commas, semicolons, colons, or en dashes instead.
 

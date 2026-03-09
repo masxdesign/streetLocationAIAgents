@@ -34,6 +34,8 @@ The pillar topic must read as natural prose — never paste it verbatim if it so
 
 Do not stuff the pillar topic repeatedly. If it already appears naturally in these places, leave it alone.
 
+**CRITICAL:** Never insert the full pillar topic string verbatim into a sentence (e.g. "The West London retail market overview and investment insights reveal..."). This reads as keyword stuffing. Instead, reference the topic naturally (e.g. "Across West London's retail market, flexibility and community engagement drive...").
+
 ## 4. Keyword Density Analysis
 
 After placing the pillar topic, perform a keyword density audit across the full article.
