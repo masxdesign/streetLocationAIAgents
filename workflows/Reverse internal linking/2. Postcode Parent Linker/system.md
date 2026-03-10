@@ -24,8 +24,12 @@ heading, subtext, cta_text (for the aside card):
 
 rewritten_introduction:
 - Return the full introduction as plain Markdown prose.
-- Insert one sentence that references the parent guide and includes this link: [natural link text](/placeholder/id/PARENT_ID). PARENT_ID is a literal placeholder — do not change it.
-- Place the sentence where it fits most naturally in the flow — do not force it at the start or end.
+- You MUST insert exactly one Markdown hyperlink using this exact format: [natural link text](/placeholder/id/PARENT_ID)
+  - PARENT_ID is a literal string — do not replace it, do not change it, do not omit it.
+  - The link text should be a short natural phrase referencing the parent guide (e.g. "our West London retail guide", "the wider West London guide") — NOT the full parent post title.
+  - FAILURE: writing the parent post title or region as plain text without a Markdown link is not acceptable output.
+  - EXAMPLE of correct output: "This postcode area forms part of a wider commercial picture covered in [our West London retail guide](/placeholder/id/PARENT_ID)."
+- Place the linked sentence where it fits most naturally in the flow — do not force it at the start or end.
 - You may lightly rewrite surrounding sentences only where needed to help the new sentence fit naturally. Do not change the meaning of any existing content. Do not invent facts, statistics, or claims not present in the original.
 - The reference should read as editorial commentary, not a call to action.
 - No em dashes. No headings. No bullet points. Plain prose only.
